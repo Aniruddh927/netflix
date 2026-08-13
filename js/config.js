@@ -16,5 +16,5 @@
  * Leave the string empty to keep the demo email login only.
  */
 window.APP_CONFIG = {
-  googleClientId: ""
+  googleClientId: "209261891911-b0g5rdmq0v988bl5udl114jqjt3n541j.apps.googleusercontent.com"
 };
