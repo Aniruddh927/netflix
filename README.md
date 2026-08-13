@@ -1,12 +1,12 @@
 # Netflix UI Clone — educational demo
 
-A pure HTML/CSS/JavaScript recreation of the Netflix browsing experience, built as a front-end learning exercise: dark themed browsing page with hero banner, genre rows, hover cards, a detail modal, live search, a sign-in page, and **real "Sign in with Google"** support. Every title on the site is fictional and no video is streamed — poster/backdrop artwork is procedurally generated SVG, so there is no copyrighted imagery and no external assets (other than Google's official Sign-In script).
+A pure HTML/CSS/JavaScript recreation of the Netflix browsing experience, built as a front-end learning exercise: dark themed browsing page with hero banner, genre rows (including "New & Popular"), hover cards, a working **My List / favourites** system, a detail modal with a demo trailer player, live search, a sign-in page with an activity log, and **real "Sign in with Google"** support. Every title on the site is fictional and no video is streamed — poster/backdrop artwork is procedurally generated SVG, so there is no copyrighted imagery and no external assets (other than Google's official Sign-In script).
 
 Built with no frameworks, no build tools, and no external libraries or fonts.
 
 ## Pages
 
-- `login.html` — sign-in page (demo email/password form + optional Google Sign-In)
+- `login.html` — sign-in page: demo email/password form, one-click demo user, optional Google Sign-In, and a login activity log for testers
 - `index.html` — the browsing UI (redirects to `login.html` until signed in)
 
 ## Run locally
@@ -21,7 +21,11 @@ Then visit `http://localhost:8000`.
 
 ## Demo login
 
-Any valid-looking email + a password of at least 4 characters signs you in; the profile name is derived from the email. Profiles live only in your browser's `localStorage` — sign out from the avatar menu (top right).
+Any valid-looking email + a password of at least 4 characters signs you in, or use the **"Sign in as Demo User"** button. Profiles, the My List, and the activity log live only in your browser's `localStorage` — sign out from the avatar menu (top right).
+
+## My List (favourites)
+
+Hover any poster and click **＋** (top-right corner) — or use the **"＋ My List"** button inside a title's detail modal — to add/remove favourites. The My List row always sits at the top of the page, per signed-in user. The navbar's **My List** link scrolls to it.
 
 ## Real Google Sign-In (optional)
 

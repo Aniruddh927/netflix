@@ -18,7 +18,8 @@
 
 window.GENRE_ROWS = [
   "Trending Now",
-  "Popular on Cloneflix",
+  "New & Popular",
+  "Popular on Netflix",
   "Action & Adventure",
   "Sci-Fi & Fantasy",
   "Comedies",

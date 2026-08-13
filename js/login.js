@@ -32,9 +32,22 @@
         .replace(/[._\-+]+/g, ' ')
         .trim()
         .replace(/\b\w/g, (c) => c.toUpperCase());
-      Auth.signIn({ name: name || 'Viewer', email: em, avatar: null });
+      Auth.signIn({ name: name || 'Viewer', email: em, avatar: null }, 'demo email');
       location.replace('index.html');
     });
+
+    /* --- One-click demo login for quick testing ------------------------- */
+    const demoBtn = document.getElementById('demo-btn');
+    if (demoBtn) {
+      demoBtn.addEventListener('click', () => {
+        email.value = 'demo@netflix-demo.com';
+        password.value = 'demo123';
+        form.requestSubmit();
+      });
+    }
+
+    /* --- Login activity log (visible to testers) ------------------------ */
+    renderLog();
 
     /* --- 2. Google Sign-In (real, if configured) ------------------------ */
     const clientId = window.APP_CONFIG && APP_CONFIG.googleClientId;
@@ -62,11 +75,14 @@
     function onCredential(resp) {
       try {
         const payload = decodeJwt(resp.credential);
-        Auth.signIn({
-          name: payload.name,
-          email: payload.email,
-          avatar: payload.picture || null
-        });
+        Auth.signIn(
+          {
+            name: payload.name,
+            email: payload.email,
+            avatar: payload.picture || null
+          },
+          'google'
+        );
         location.replace('index.html');
       } catch (e) {
         err.textContent = 'Google sign-in failed. Please use the email form.';
@@ -90,5 +106,33 @@
     const bin = atob(part + pad);
     const bytes = Uint8Array.from(bin, (c) => c.charCodeAt(0));
     return JSON.parse(new TextDecoder().decode(bytes));
+  }
+
+  /** Render recent sign-in/sign-out activity into #login-log. */
+  function renderLog() {
+    const host = document.getElementById('login-log');
+    if (!host) return;
+    const log = (window.LoginLog ? LoginLog.get() : []).slice(0, 6);
+    host.textContent = '';
+    if (log.length === 0) {
+      const empty = document.createElement('p');
+      empty.className = 'login__log-empty';
+      empty.textContent = 'No sign-in activity yet — sign in once and it will appear here.';
+      host.appendChild(empty);
+      return;
+    }
+    log.forEach((entry) => {
+      const row = document.createElement('div');
+      row.className = 'login__log-row';
+      const who = document.createElement('span');
+      who.className = 'login__log-who';
+      who.textContent = `${entry.action === 'sign-in' ? '▶' : '◀'} ${entry.name || entry.email || 'Unknown'} (${entry.email || '—'})`;
+      const meta = document.createElement('span');
+      meta.className = 'login__log-meta';
+      meta.textContent = `${entry.method} · ${new Date(entry.t).toLocaleString()}`;
+      row.appendChild(who);
+      row.appendChild(meta);
+      host.appendChild(row);
+    });
   }
 })();

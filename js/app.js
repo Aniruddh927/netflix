@@ -67,7 +67,7 @@
   };
 
   /** Rows that always contain the full catalog. */
-  const FULL_CATALOG_ROWS = ['Trending Now', 'Popular on Cloneflix'];
+  const FULL_CATALOG_ROWS = ['Trending Now', 'Popular on Netflix'];
 
   /* ================================================================
    * 3. App state
@@ -78,6 +78,7 @@
     heroItems: [],   // trending items the hero banner rotates through
     heroIndex: 0,
     modalOpen: false,
+    myList: new Set(), // favourite ids (per signed-in user)
   };
 
   /* ================================================================
@@ -107,6 +108,106 @@
     }
 
     const genreRows = Array.isArray(window.GENRE_ROWS) ? window.GENRE_ROWS : [];
+
+    /* ----------------------------------------------------------------
+     * 4a2. My List (favourites) — per-user, persisted in localStorage
+     * ---------------------------------------------------------------- */
+    const user = (window.Auth && Auth.getUser()) || null;
+    const listKey = 'netflix-mylist-' + (user && user.email ? user.email.toLowerCase() : 'anon');
+
+    function loadMyList() {
+      try {
+        state.myList = new Set(JSON.parse(localStorage.getItem(listKey)) || []);
+      } catch (e) {
+        state.myList = new Set();
+      }
+    }
+
+    function persistMyList() {
+      localStorage.setItem(listKey, JSON.stringify([...state.myList]));
+    }
+
+    function inMyList(item) {
+      return state.myList.has(item.id);
+    }
+
+    function toggleMyList(item, btn) {
+      if (state.myList.has(item.id)) {
+        state.myList.delete(item.id);
+      } else {
+        state.myList.add(item.id);
+      }
+      persistMyList();
+      if (btn) {
+        const added = inMyList(item);
+        if (btn.classList.contains('card__add')) {
+          btn.textContent = added ? '✓' : '＋';
+        } else {
+          btn.textContent = added ? '✓ In My List' : '＋ My List';
+        }
+        btn.classList.toggle('in-list', added);
+      }
+      renderMyListRow();
+    }
+
+    /** The always-present "My List" row, first in #rows. */
+    function renderMyListRow() {
+      const existing = rowsEl.querySelector('.row--mylist');
+      if (existing) existing.remove();
+
+      const row = el('section', 'row row--mylist');
+      row.appendChild(el('h2', 'row__title', 'My List'));
+
+      const items = CATALOG.filter((item) => state.myList.has(item.id));
+      if (items.length === 0) {
+        row.appendChild(el('p', 'row__empty', 'Your list is empty — hover any title and click ＋ to add it.'));
+      } else {
+        const cards = el('div', 'row__cards');
+        items.forEach((item) => cards.appendChild(renderCard(item)));
+        row.appendChild(cards);
+      }
+      rowsEl.prepend(row);
+    }
+
+    /** Fake "trailer" player overlaid on the modal (demo only). */
+    function startPlayer(item) {
+      const box = modalEl.querySelector('.modal__box');
+      if (!box) return;
+      box.querySelectorAll('.player').forEach((p) => p.remove());
+
+      const player = el('div', 'player');
+
+      const img = el('img', 'player__img');
+      img.src = `images/backdrop/${item.id}.svg`;
+      img.alt = item.title;
+      player.appendChild(img);
+
+      const top = el('div', 'player__top');
+      const back = el('button', 'player__back', '← Back');
+      top.appendChild(back);
+      top.appendChild(el('span', 'player__title', `${item.title} — trailer (demo)`));
+      player.appendChild(top);
+
+      player.appendChild(el('p', 'player__demo', 'Demo player — no real video is streamed.'));
+
+      const bar = el('div', 'player__bar');
+      const fill = el('div', 'player__fill');
+      bar.appendChild(fill);
+      player.appendChild(bar);
+
+      function stop() {
+        player.remove();
+        document.removeEventListener('keydown', onKey);
+      }
+      function onKey(event) {
+        if (event.key === 'Escape') stop();
+      }
+      back.addEventListener('click', stop);
+      document.addEventListener('keydown', onKey);
+      fill.addEventListener('animationend', stop);
+
+      box.appendChild(player);
+    }
 
     /* ----------------------------------------------------------------
      * 4a. Posters & cards
@@ -158,6 +259,15 @@
 
       card.appendChild(info);
 
+      const addBtn = el('button', 'card__add', inMyList(item) ? '✓' : '＋');
+      addBtn.setAttribute('aria-label', `${item.title} — toggle My List`);
+      addBtn.classList.toggle('in-list', inMyList(item));
+      addBtn.addEventListener('click', (event) => {
+        event.stopPropagation();
+        toggleMyList(item, addBtn);
+      });
+      card.appendChild(addBtn);
+
       card.addEventListener('click', () => openModal(item));
       card.addEventListener('keydown', (event) => {
         if (event.key === 'Enter') {
@@ -176,6 +286,9 @@
     /** Items belonging to a given row label (per the spec's mapping). */
     function itemsForRow(label) {
       if (FULL_CATALOG_ROWS.includes(label)) return CATALOG.slice();
+      if (label === 'New & Popular') {
+        return CATALOG.filter((item) => item.year >= 2024).sort((a, b) => b.year - a.year);
+      }
       const wanted = ROW_GENRES[label];
       if (!wanted) return [];
       return CATALOG.filter((item) => item.genres.some((g) => wanted.includes(g)));
@@ -220,6 +333,7 @@
 
     /** Build every genre row into #rows, guaranteeing "Trending Now" first. */
     function buildRows() {
+      loadMyList();
       const labels = [
         'Trending Now',
         ...genreRows.filter((label) => label !== 'Trending Now'),
@@ -235,6 +349,7 @@
       });
 
       rowsEl.appendChild(fragment);
+      renderMyListRow();
     }
 
     /* ----------------------------------------------------------------
@@ -307,6 +422,7 @@
     function openModal(item) {
       if (!item) return;
       state.modalOpen = true;
+      modalEl.querySelectorAll('.player').forEach((p) => p.remove());
 
       // Backdrop art with the big title overlaid.
       const backdrop = el('div', 'modal__backdrop');
@@ -330,10 +446,14 @@
       body.appendChild(el('p', 'modal__desc', item.description));
 
       const playBtn = el('button', 'btn btn--play', '▶ Play');
-      playBtn.addEventListener('click', () => {
-        alert('Demo: video playback is not included in this educational clone.');
-      });
+      playBtn.addEventListener('click', () => startPlayer(item));
+
+      const listBtn = el('button', 'btn btn--info btn--list', inMyList(item) ? '✓ In My List' : '＋ My List');
+      listBtn.classList.toggle('in-list', inMyList(item));
+      listBtn.addEventListener('click', () => toggleMyList(item, listBtn));
+
       body.appendChild(playBtn);
+      body.appendChild(listBtn);
 
       render(modalContent, backdrop, body);
 
@@ -348,6 +468,7 @@
     function closeModal() {
       if (!state.modalOpen) return;
       state.modalOpen = false;
+      modalEl.querySelectorAll('.player').forEach((p) => p.remove());
       modalEl.classList.remove('modal--open');
       modalEl.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('modal-open');
@@ -379,11 +500,13 @@
       if (query === '') {
         heroEl.classList.remove('hidden');
         state.rows.forEach((row) => row.classList.remove('hidden'));
+        rowsEl.querySelectorAll('.row--mylist').forEach((row) => row.classList.remove('hidden'));
         return;
       }
 
       heroEl.classList.add('hidden');
       state.rows.forEach((row) => row.classList.add('hidden'));
+      rowsEl.querySelectorAll('.row--mylist').forEach((row) => row.classList.add('hidden'));
 
       const matches = CATALOG.filter((item) => matchesQuery(item, query));
 
@@ -435,6 +558,19 @@
       clearTimeout(searchDebounce);
       searchDebounce = setTimeout(() => applySearch(searchInput.value), 250);
     });
+
+    // My List nav link: scroll to (and briefly highlight) the My List row.
+    const navMyList = document.getElementById('nav-mylist');
+    if (navMyList) {
+      navMyList.addEventListener('click', (event) => {
+        event.preventDefault();
+        const row = rowsEl.querySelector('.row--mylist');
+        if (!row) return;
+        row.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        row.classList.add('row--flash');
+        setTimeout(() => row.classList.remove('row--flash'), 1600);
+      });
+    }
 
     // Navbar scroll effect.
     window.addEventListener('scroll', onScroll, { passive: true });

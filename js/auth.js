@@ -8,6 +8,30 @@
   'use strict';
 
   const KEY = 'netflix-demo-user';
+  const LOG_KEY = 'netflix-login-log';
+
+  function addLog(entry) {
+    try {
+      const log = JSON.parse(localStorage.getItem(LOG_KEY)) || [];
+      log.unshift(Object.assign({ t: new Date().toISOString() }, entry));
+      localStorage.setItem(LOG_KEY, JSON.stringify(log.slice(0, 50)));
+    } catch (e) {
+      /* storage unavailable — ignore */
+    }
+  }
+
+  window.LoginLog = {
+    get() {
+      try {
+        return JSON.parse(localStorage.getItem(LOG_KEY)) || [];
+      } catch (e) {
+        return [];
+      }
+    },
+    clear() {
+      localStorage.removeItem(LOG_KEY);
+    }
+  };
 
   function getUser() {
     try {
@@ -17,12 +41,15 @@
     }
   }
 
-  function signIn(profile) {
+  function signIn(profile, method) {
     localStorage.setItem(KEY, JSON.stringify(profile));
+    addLog({ action: 'sign-in', method: method || 'unknown', name: profile.name, email: profile.email });
   }
 
   function signOut() {
+    const user = getUser();
     localStorage.removeItem(KEY);
+    addLog({ action: 'sign-out', method: '-', name: user && user.name, email: user && user.email });
   }
 
   window.Auth = { getUser, signIn, signOut };

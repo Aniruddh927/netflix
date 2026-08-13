@@ -176,3 +176,74 @@ body::before {
     padding: 28px 20px;
   }
 }
+
+/* --- One-click demo login ------------------------------------------------ */
+.btn--demo {
+  width: 100%;
+  margin-top: 10px;
+  padding: 11px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn--demo:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #666;
+}
+
+/* --- Login activity log ---------------------------------------------------- */
+.login__log {
+  margin-top: 18px;
+  border-top: 1px solid #333;
+  padding-top: 12px;
+}
+
+.login__log summary {
+  color: var(--muted);
+  font-size: 0.8rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.login__log summary:hover {
+  color: var(--text);
+}
+
+#login-log {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.login__log-empty {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-style: italic;
+}
+
+.login__log-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.78rem;
+}
+
+.login__log-who {
+  color: var(--text);
+  word-break: break-all;
+}
+
+.login__log-meta {
+  color: var(--muted);
+}
