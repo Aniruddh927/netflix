@@ -1,0 +1,867 @@
+/* ==========================================================================
+   Cloneflix — Netflix-style UI clone (educational demo)
+   File: css/style.css
+   Pure HTML/CSS — no external fonts, images, libraries, or CDN links.
+   Styles index.html hooks and the elements rendered by js/app.js.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design tokens
+   -------------------------------------------------------------------------- */
+:root {
+  --bg: #141414;
+  --surface: #181818;
+  --red: #E50914;
+  --text: #e5e5e5;
+  --muted: #9e9e9e;
+  --card-w: 200px;
+
+  --nav-h: 68px;
+  --match-green: #46d369;
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --z-navbar: 1000;
+  --z-card: 20;
+  --z-modal: 2000;
+  --radius: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   2. Base / reset
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scrollbar-color: #333 var(--bg);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Lock page scroll while the modal is open (JS toggles this class) */
+body.modal-open {
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--red);
+  color: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   3. Utilities
+   -------------------------------------------------------------------------- */
+.hidden {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. Navbar
+   -------------------------------------------------------------------------- */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-h);
+  z-index: var(--z-navbar);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4%;
+  background: transparent;
+  transition: background-color 0.3s ease;
+}
+
+/* Dark gradient scrim underneath the transparent bar at the top */
+#navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.4) 55%,
+    rgba(0, 0, 0, 0)
+  );
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* JS toggles body.scrolled once the page is scrolled down */
+body.scrolled #navbar {
+  background-color: var(--bg);
+}
+
+body.scrolled #navbar::before {
+  opacity: 0;
+}
+
+.navbar__left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.navbar__logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--red);
+  cursor: pointer;
+  line-height: 1;
+  user-select: none;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  list-style: none;
+}
+
+.navbar__links a {
+  font-size: 0.875rem;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.navbar__links a:hover {
+  color: var(--muted);
+}
+
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* --- Search -------------------------------------------------------------- */
+#search-form {
+  display: flex;
+  align-items: center;
+}
+
+#search-input {
+  width: 0;
+  padding: 6px 0;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: rgba(0, 0, 0, 0.75);
+  color: var(--text);
+  font-size: 0.875rem;
+  opacity: 0;
+  transition: width 0.3s ease, opacity 0.3s ease, padding 0.3s ease,
+    border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Expands nicely on hover / focus */
+#search-form:hover #search-input,
+#search-input:focus {
+  width: 200px;
+  padding: 6px 10px;
+  opacity: 1;
+  border-color: #333;
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: #555;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+#search-input::placeholder {
+  color: var(--muted);
+}
+
+#search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border: none;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text);
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+#search-btn:hover {
+  color: var(--muted);
+}
+
+/* --- Avatar (no external images — rendered as a gradient tile) ----------- */
+.navbar__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, #b20710, #e50914 45%, #5a070c);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* --------------------------------------------------------------------------
+   5. Hero
+   -------------------------------------------------------------------------- */
+#hero {
+  position: relative;
+  height: 75vh;
+  min-height: 420px;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  /* The background-image linear-gradient is set inline by JS */
+}
+
+/* Scrim overlay: transparent at the top, fading into the page bg at bottom */
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      to top,
+      var(--bg) 0%,
+      rgba(20, 20, 20, 0.4) 55%,
+      rgba(20, 20, 20, 0) 100%
+    ),
+    linear-gradient(to right, rgba(20, 20, 20, 0.7) 0%, rgba(20, 20, 20, 0) 55%);
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 45%;
+  padding: 0 4% 8vh;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero__title {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: #fff;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.hero__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.hero__meta .match,
+.modal__meta .match {
+  color: var(--match-green);
+  font-weight: 700;
+}
+
+.hero__meta .year,
+.modal__meta .year {
+  color: var(--muted);
+}
+
+.hero__meta .badge,
+.modal__meta .badge {
+  padding: 1px 6px;
+  border: 1px solid var(--muted);
+  border-radius: 3px;
+  font-size: 0.72rem;
+  color: var(--text);
+  letter-spacing: 0.5px;
+}
+
+.hero__meta .duration,
+.modal__meta .duration {
+  color: var(--muted);
+}
+
+.hero__desc {
+  max-width: 55ch;
+  font-size: 1rem;
+  color: var(--text);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.hero__buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   6. Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  transition: background-color 0.2s ease, opacity 0.2s ease, transform 0.1s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn--play {
+  background: #fff;
+  color: #000;
+}
+
+.btn--play:hover {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.btn--info {
+  background: rgba(109, 109, 110, 0.7);
+  color: #fff;
+}
+
+.btn--info:hover {
+  background: rgba(109, 109, 110, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   7. Content rows
+   -------------------------------------------------------------------------- */
+#rows {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 40px;
+}
+
+.row {
+  position: relative;
+  padding: 28px 0 12px;
+}
+
+/* Results row that sits right below the fixed navbar gets extra top room */
+.row--results {
+  padding-top: calc(var(--nav-h) + 24px);
+}
+
+.row__title {
+  padding: 0 4%;
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.row:hover .row__title {
+  color: #fff;
+}
+
+.row__cards {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 24px 4% 44px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  /* Hide the scrollbar on desktop (Firefox / WebKit) */
+  scrollbar-width: none;
+}
+
+.row__cards::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- Row scroll buttons -------------------------------------------------- */
+.row__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: var(--z-card);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: rgba(20, 20, 20, 0.6);
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.row__btn--left {
+  left: 8px;
+}
+
+.row__btn--right {
+  right: 8px;
+}
+
+/* Visible on row hover (desktop only) */
+.row:hover .row__btn,
+.row__btn:focus-visible {
+  opacity: 1;
+}
+
+.row__btn:hover {
+  background: rgba(20, 20, 20, 0.9);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* --------------------------------------------------------------------------
+   8. Poster cards (JS-rendered)
+   -------------------------------------------------------------------------- */
+.card {
+  position: relative;
+  flex: 0 0 auto;
+  width: var(--card-w);
+  aspect-ratio: 2 / 3;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: scale(1.15);
+  z-index: var(--z-card);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+}
+
+.card:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.85);
+}
+
+/* Poster area — JS sets an inline linear-gradient background and
+   renders the title text inside. */
+.card__poster {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+}
+
+.card__poster > span,
+.card__poster > h3,
+.card__poster > p {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* Info bar revealed on hover */
+.card__info {
+  position: absolute;
+  inset: auto 0 0 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: rgba(24, 24, 24, 0.92);
+  font-size: 0.75rem;
+  color: var(--text);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.card:hover .card__info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card__info .match {
+  color: var(--match-green);
+  font-weight: 600;
+}
+
+.card__info .meta {
+  color: var(--muted);
+}
+
+/* Round play button inside the info bar */
+.card__play {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  font-size: 0.75rem;
+  line-height: 1;
+  margin-left: auto;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.card__play:hover {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+/* --------------------------------------------------------------------------
+   9. Modal
+   -------------------------------------------------------------------------- */
+#modal {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.7);
+  overflow-y: auto;
+}
+
+#modal.modal--open {
+  display: flex;
+}
+
+.modal__box {
+  position: relative;
+  width: 92%;
+  max-width: 850px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 8px;
+  background: var(--surface);
+  scrollbar-width: thin;
+  scrollbar-color: #444 var(--surface);
+  animation: modal-in 0.3s ease;
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: background-color 0.2s ease;
+}
+
+.modal__close:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+#modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Large gradient header area with the title overlaid */
+.modal__backdrop {
+  position: relative;
+  height: 380px;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+  background-size: cover;
+  background-position: center;
+  /* Background gradient set inline by JS */
+}
+
+/* Fade the backdrop into the modal surface below */
+.modal__backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--surface) 0%, rgba(0, 0, 0, 0) 65%);
+  pointer-events: none;
+}
+
+.modal__title,
+.modal__backdrop-title {
+  position: relative;
+  z-index: 1;
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fff;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+}
+
+.modal__body {
+  padding: 20px 28px 32px;
+}
+
+.modal__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 14px;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.modal__desc {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.modal__meta .genres {
+  color: var(--muted);
+}
+
+.row__empty {
+  padding: 0 4%;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------------------
+   10. Footer
+   -------------------------------------------------------------------------- */
+#footer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 4%;
+  color: var(--muted);
+}
+
+.footer__links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+  list-style: none;
+}
+
+.footer__links a {
+  font-size: 0.8rem;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.footer__links a:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+.footer__disclaimer {
+  padding-top: 16px;
+  border-top: 1px solid #2a2a2a;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: #6d6d6d;
+}
+
+/* --------------------------------------------------------------------------
+   11. Accessibility
+   -------------------------------------------------------------------------- */
+:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   12. Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  :root {
+    --card-w: 140px;
+    --nav-h: 56px;
+  }
+
+  /* Smaller navbar */
+  #navbar {
+    padding: 0 4%;
+  }
+
+  .navbar__logo {
+    font-size: 1.2rem;
+  }
+
+  .navbar__links {
+    gap: 10px;
+  }
+
+  .navbar__links a {
+    font-size: 0.78rem;
+  }
+
+  .navbar__right {
+    gap: 10px;
+  }
+
+  #search-form:hover #search-input,
+  #search-input:focus {
+    width: 140px;
+  }
+
+  /* Smaller hero */
+  #hero {
+    height: 60vh;
+    min-height: 360px;
+  }
+
+  .hero__content {
+    max-width: 92%;
+    padding-bottom: 7vh;
+    gap: 12px;
+  }
+
+  .hero__title {
+    font-size: 2.2rem;
+  }
+
+  .hero__desc {
+    font-size: 0.875rem;
+  }
+
+  .hero__meta {
+    font-size: 0.85rem;
+  }
+
+  .hero__buttons .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  /* Hide the scroll chevrons on touch/small screens */
+  .row__btn {
+    display: none;
+  }
+
+  /* Smaller modal */
+  .modal__box {
+    width: 96%;
+  }
+
+  .modal__backdrop {
+    height: 260px;
+  }
+
+  .modal__title {
+    font-size: 1.6rem;
+  }
+
+  .modal__body {
+    padding: 16px 18px 24px;
+  }
+
+  /* Footer links collapse to two columns */
+  .footer__links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Touch devices (e.g. landscape tablets) — no hover, so hide hover-only UI */
+@media (hover: none) {
+  .row__btn {
+    display: none;
+  }
+
+  .card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}

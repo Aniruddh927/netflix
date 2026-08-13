@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloneflix — Stream Fictional Originals (Demo)</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top navigation bar -->
+  <header id="navbar">
+    <div class="navbar__left">
+      <a class="navbar__logo" href="#">CLONEFLIX</a>
+      <ul class="navbar__links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">TV Shows</a></li>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">My List</a></li>
+      </ul>
+    </div>
+    <div class="navbar__right">
+      <form id="search-form">
+        <input id="search-input" type="text" placeholder="Search titles, genres…" autocomplete="off">
+        <button id="search-btn" type="submit">Search</button>
+      </form>
+      <div class="navbar__avatar" aria-hidden="true">A</div>
+    </div>
+  </header>
+
+  <main>
+    <!-- app.js fills this section -->
+    <section id="hero"></section>
+
+    <!-- app.js fills this section -->
+    <section id="rows"></section>
+  </main>
+
+  <!-- app.js fills #modal-content; the CSS .modal--open class controls visibility -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal__box">
+      <button class="modal__close" aria-label="Close">×</button>
+      <!-- app.js fills this content area -->
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <footer id="footer">
+    <div class="footer__links">
+      <ul>
+        <li><a href="#">Audio Description</a></li>
+        <li><a href="#">Help Centre</a></li>
+        <li><a href="#">Gift Cards</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Media Centre</a></li>
+        <li><a href="#">Investor Relations</a></li>
+        <li><a href="#">Jobs</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Legal Notices</a></li>
+        <li><a href="#">Cookie Preferences</a></li>
+      </ul>
+    </div>
+    <p class="footer__disclaimer">Cloneflix is an educational demo of a streaming UI. Not affiliated with, endorsed by, or connected to Netflix. All titles are fictional.</p>
+  </footer>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
