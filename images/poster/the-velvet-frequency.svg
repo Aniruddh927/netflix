@@ -1,10 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="The Velvet Frequency poster">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#654ea3"/><stop offset="1" stop-color="#352a5e"/>
+      <stop offset="0" stop-color="#654ea3"/><stop offset="0.5" stop-color="#4d3c81"/><stop offset="1" stop-color="#352a5e"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.72" cy="0.18" r="0.85">
       <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/>
     </radialGradient>
     <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0.45" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
@@ -25,8 +28,35 @@
   <line x1="38" y1="514" x2="278" y2="34" stroke="#ffffff" stroke-width="1"/>
     </g>
     <text x="368" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#E50914" text-anchor="end">N</text>
+    <rect width="400" height="600" fill="url(#vignette)"/>
     <rect width="400" height="600" fill="url(#fade)"/>
+  <circle cx="218" cy="482" r="1.11" fill="#ffffff" opacity="0.25"/>
+  <circle cx="314" cy="95" r="1.74" fill="#ffffff" opacity="0.25"/>
+  <circle cx="227" cy="127" r="1.48" fill="#ffffff" opacity="0.25"/>
+  <circle cx="42" cy="265" r="1.34" fill="#ffffff" opacity="0.25"/>
+  <circle cx="70" cy="148" r="1.81" fill="#ffffff" opacity="0.25"/>
+  <circle cx="161" cy="499" r="1.79" fill="#ffffff" opacity="0.25"/>
+  <circle cx="296" cy="254" r="1.83" fill="#ffffff" opacity="0.25"/>
+  <circle cx="248" cy="275" r="1.55" fill="#ffffff" opacity="0.25"/>
+  <circle cx="135" cy="555" r="1.84" fill="#ffffff" opacity="0.25"/>
+  <circle cx="392" cy="304" r="1.48" fill="#ffffff" opacity="0.25"/>
+  <circle cx="289" cy="44" r="1.95" fill="#ffffff" opacity="0.25"/>
+  <circle cx="93" cy="325" r="1.62" fill="#ffffff" opacity="0.25"/>
+  <circle cx="378" cy="541" r="1.87" fill="#ffffff" opacity="0.25"/>
+  <circle cx="166" cy="312" r="1.19" fill="#ffffff" opacity="0.25"/>
+  <circle cx="388" cy="316" r="1.51" fill="#ffffff" opacity="0.25"/>
+  <circle cx="159" cy="39" r="1.56" fill="#ffffff" opacity="0.25"/>
+  <circle cx="215" cy="546" r="1.75" fill="#ffffff" opacity="0.25"/>
+  <circle cx="77" cy="44" r="1.88" fill="#ffffff" opacity="0.25"/>
+  <circle cx="193" cy="505" r="1.53" fill="#ffffff" opacity="0.25"/>
+  <circle cx="223" cy="3" r="1.25" fill="#ffffff" opacity="0.25"/>
+  <circle cx="136" cy="199" r="1.51" fill="#ffffff" opacity="0.25"/>
+  <circle cx="326" cy="359" r="1.02" fill="#ffffff" opacity="0.25"/>
+  <circle cx="391" cy="139" r="1.87" fill="#ffffff" opacity="0.25"/>
+  <circle cx="47" cy="310" r="1.84" fill="#ffffff" opacity="0.25"/>
+  <circle cx="374" cy="414" r="1.06" fill="#ffffff" opacity="0.25"/>
     <rect x="26" y="470" width="36" height="4" fill="#E50914"/>
+  <text x="26" y="462" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.5" fill="rgba(255,255,255,0.75)">MYSTERY</text>
   <text x="29" y="519" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="rgba(0,0,0,0.55)">The Velvet</text>
   <text x="26" y="516" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#ffffff">The Velvet</text>
   <text x="29" y="559" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="rgba(0,0,0,0.55)">Frequency</text>

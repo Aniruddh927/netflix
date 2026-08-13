@@ -1,0 +1,390 @@
+/* ==========================================================================
+   Cloneflix — Netflix-style UI clone (educational demo)
+   File: css/profiles.css
+   Styles for the "Who's watching?" profile picker (profiles.html).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design tokens
+   -------------------------------------------------------------------------- */
+:root {
+  --bg: #141414;
+  --red: #e50914;
+  --text: #e5e5e5;
+  --muted: #737373;
+  --sans: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --serif: Georgia, 'Times New Roman', serif;
+  --card-size: 130px;
+}
+
+/* --------------------------------------------------------------------------
+   2. Base / reset
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+::selection {
+  background: var(--red);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Brand header
+   -------------------------------------------------------------------------- */
+.profiles__brand {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 4%;
+}
+
+.profiles__logo {
+  font-size: 1.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--red);
+  line-height: 1;
+  user-select: none;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+#signout-btn {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+#signout-btn:hover {
+  color: var(--text);
+}
+
+/* --------------------------------------------------------------------------
+   4. Main column
+   -------------------------------------------------------------------------- */
+.profiles__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 32px 0 24px;
+}
+
+#profiles-title {
+  margin: 0 4%;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   5. Profile card grid
+   -------------------------------------------------------------------------- */
+#profiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  max-width: 90%;
+  margin: 4vh auto;
+}
+
+.profile-card {
+  width: var(--card-size);
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  text-align: center;
+  cursor: pointer;
+}
+
+.profile-card__avatar {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid transparent;
+  border-radius: 8px;
+  font-family: var(--serif);
+  font-size: 4rem;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  user-select: none;
+  transition: border-color 0.2s ease;
+}
+
+.profile-card:hover .profile-card__avatar,
+.profile-card:focus-visible .profile-card__avatar {
+  border-color: var(--text);
+}
+
+.profile-card:hover .profile-card__name,
+.profile-card:focus-visible .profile-card__name {
+  color: var(--text);
+}
+
+.profile-card__name {
+  display: block;
+  margin-top: 10px;
+  font-size: 1rem;
+  text-align: center;
+  transition: color 0.2s ease;
+}
+
+/* --- Edit / delete overlays (manage mode) ------------------------------- */
+.profile-card__edit,
+.profile-card__delete {
+  position: absolute;
+  top: 6px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.profile-card__edit {
+  left: 6px;
+}
+
+.profile-card__delete {
+  right: 6px;
+}
+
+.profile-card:hover .profile-card__edit,
+.profile-card:hover .profile-card__delete,
+.profile-card__edit:focus-visible,
+.profile-card__delete:focus-visible {
+  opacity: 1;
+}
+
+.profile-card__edit:hover,
+.profile-card__delete:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.profile-card__delete:hover {
+  background: var(--red);
+}
+
+/* --- "＋ Add Profile" card ---------------------------------------------- */
+.profile-card__add .profile-card__avatar {
+  border: 2px dashed var(--muted);
+  font-family: var(--sans);
+  font-size: 3.5rem;
+  color: var(--muted);
+  text-shadow: none;
+}
+
+.profile-card__add:hover .profile-card__avatar,
+.profile-card__add:focus-visible .profile-card__avatar {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+/* --------------------------------------------------------------------------
+   6. Inline rename input & add-profile form
+   -------------------------------------------------------------------------- */
+.profile-card__input,
+.profile-add__name {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background: #333;
+  color: #fff;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.profile-card__input:focus,
+.profile-add__name:focus {
+  outline: none;
+  border-color: #fff;
+}
+
+.profile-card__input::placeholder,
+.profile-add__name::placeholder {
+  color: var(--muted);
+}
+
+.profile-add__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-add__swatches {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.profile-add__swatch {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  transition: border-color 0.2s ease, transform 0.1s ease;
+}
+
+.profile-add__swatch.selected {
+  border-color: #fff;
+}
+
+.profile-add__swatch:hover {
+  transform: scale(1.1);
+}
+
+.profile-add__submit {
+  margin-top: 14px;
+  padding: 6px 14px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text);
+  font-size: 0.85rem;
+  transition: border-color 0.2s ease;
+}
+
+.profile-add__submit:hover {
+  border-color: var(--text);
+}
+
+/* --------------------------------------------------------------------------
+   7. Actions row (Manage Profiles / Done)
+   -------------------------------------------------------------------------- */
+#profiles-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+#manage-btn,
+#done-btn {
+  padding: 10px 26px;
+  border: 1px solid var(--muted);
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+#manage-btn:hover,
+#done-btn:hover {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+/* --------------------------------------------------------------------------
+   8. Footer
+   -------------------------------------------------------------------------- */
+.profiles__footer {
+  width: 100%;
+  padding: 24px 4%;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+/* --------------------------------------------------------------------------
+   9. Responsive & motion
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  :root {
+    --card-size: 100px;
+  }
+
+  .profile-card__avatar {
+    font-size: 3rem;
+  }
+
+  #profiles {
+    gap: 16px;
+  }
+}
+
+/* Touch devices have no hover — keep the edit/delete controls visible */
+@media (hover: none) {
+  .profile-card__edit,
+  .profile-card__delete {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}

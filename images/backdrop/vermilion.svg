@@ -1,10 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Vermilion backdrop">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#5c0f14"/><stop offset="1" stop-color="#2b0a0d"/>
+      <stop offset="0" stop-color="#5c0f14"/><stop offset="0.5" stop-color="#440d11"/><stop offset="1" stop-color="#2b0a0d"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.72" cy="0.18" r="0.85">
       <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/>
     </radialGradient>
     <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0.45" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
@@ -25,8 +28,35 @@
   <line x1="66" y1="128" x2="546" y2="0" stroke="#ffffff" stroke-width="1"/>
     </g>
     <text x="752" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#E50914" text-anchor="end">N</text>
+    <rect width="800" height="450" fill="url(#vignette)"/>
     <rect width="800" height="450" fill="url(#fade)"/>
+  <circle cx="536" cy="389" r="1.60" fill="#ffffff" opacity="0.25"/>
+  <circle cx="464" cy="250" r="1.85" fill="#ffffff" opacity="0.25"/>
+  <circle cx="180" cy="217" r="1.64" fill="#ffffff" opacity="0.25"/>
+  <circle cx="284" cy="225" r="1.43" fill="#ffffff" opacity="0.25"/>
+  <circle cx="27" cy="358" r="1.99" fill="#ffffff" opacity="0.25"/>
+  <circle cx="5" cy="413" r="1.81" fill="#ffffff" opacity="0.25"/>
+  <circle cx="649" cy="79" r="1.70" fill="#ffffff" opacity="0.25"/>
+  <circle cx="690" cy="404" r="1.64" fill="#ffffff" opacity="0.25"/>
+  <circle cx="332" cy="149" r="1.02" fill="#ffffff" opacity="0.25"/>
+  <circle cx="256" cy="125" r="1.93" fill="#ffffff" opacity="0.25"/>
+  <circle cx="77" cy="111" r="1.27" fill="#ffffff" opacity="0.25"/>
+  <circle cx="296" cy="383" r="1.84" fill="#ffffff" opacity="0.25"/>
+  <circle cx="663" cy="85" r="1.95" fill="#ffffff" opacity="0.25"/>
+  <circle cx="312" cy="381" r="1.62" fill="#ffffff" opacity="0.25"/>
+  <circle cx="762" cy="285" r="1.79" fill="#ffffff" opacity="0.25"/>
+  <circle cx="612" cy="106" r="1.69" fill="#ffffff" opacity="0.25"/>
+  <circle cx="668" cy="297" r="1.62" fill="#ffffff" opacity="0.25"/>
+  <circle cx="578" cy="143" r="1.94" fill="#ffffff" opacity="0.25"/>
+  <circle cx="649" cy="202" r="1.40" fill="#ffffff" opacity="0.25"/>
+  <circle cx="121" cy="232" r="1.38" fill="#ffffff" opacity="0.25"/>
+  <circle cx="726" cy="146" r="1.09" fill="#ffffff" opacity="0.25"/>
+  <circle cx="79" cy="274" r="1.85" fill="#ffffff" opacity="0.25"/>
+  <circle cx="725" cy="4" r="1.25" fill="#ffffff" opacity="0.25"/>
+  <circle cx="426" cy="227" r="1.09" fill="#ffffff" opacity="0.25"/>
+  <circle cx="159" cy="432" r="1.31" fill="#ffffff" opacity="0.25"/>
     <rect x="48" y="316" width="44" height="5" fill="#E50914"/>
+  <text x="48" y="306" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.5" fill="rgba(255,255,255,0.75)">CRIME</text>
   <text x="51" y="391" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="rgba(0,0,0,0.55)">Vermilion</text>
   <text x="48" y="388" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="#ffffff">Vermilion</text>
   </g>

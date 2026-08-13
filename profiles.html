@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Who's watching? — Netflix (Educational Demo)</title>
+  <link rel="stylesheet" href="css/profiles.css">
+</head>
+<body>
+  <header class="profiles__brand">
+    <a href="profiles.html" class="profiles__logo">NETFLIX</a>
+    <button id="signout-btn" type="button">Sign out</button>
+  </header>
+
+  <main class="profiles__main">
+    <h1 id="profiles-title">Who's watching?</h1>
+
+    <div id="profiles"></div>
+
+    <div id="profiles-actions">
+      <button id="manage-btn" type="button">Manage Profiles</button>
+      <button id="done-btn" type="button" hidden>Done</button>
+    </div>
+  </main>
+
+  <footer class="profiles__footer">
+    <p>This is an educational, fan-made demo of the Netflix UI. Not affiliated with Netflix.</p>
+  </footer>
+
+  <script src="js/auth.js" defer></script>
+  <script src="js/profiles.js" defer></script>
+</body>
+</html>

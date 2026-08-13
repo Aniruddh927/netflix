@@ -1,10 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="Midnight Courier poster">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#1b2735"/><stop offset="1" stop-color="#090a0f"/>
+      <stop offset="0" stop-color="#1b2735"/><stop offset="0.5" stop-color="#121922"/><stop offset="1" stop-color="#090a0f"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.72" cy="0.18" r="0.85">
       <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/>
     </radialGradient>
     <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0.45" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
@@ -25,8 +28,35 @@
   <line x1="166" y1="494" x2="406" y2="14" stroke="#ffffff" stroke-width="1"/>
     </g>
     <text x="368" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#E50914" text-anchor="end">N</text>
+    <rect width="400" height="600" fill="url(#vignette)"/>
     <rect width="400" height="600" fill="url(#fade)"/>
+  <circle cx="293" cy="417" r="1.53" fill="#ffffff" opacity="0.25"/>
+  <circle cx="333" cy="25" r="1.14" fill="#ffffff" opacity="0.25"/>
+  <circle cx="21" cy="447" r="1.37" fill="#ffffff" opacity="0.25"/>
+  <circle cx="133" cy="600" r="1.13" fill="#ffffff" opacity="0.25"/>
+  <circle cx="381" cy="214" r="1.93" fill="#ffffff" opacity="0.25"/>
+  <circle cx="101" cy="209" r="1.89" fill="#ffffff" opacity="0.25"/>
+  <circle cx="170" cy="17" r="1.44" fill="#ffffff" opacity="0.25"/>
+  <circle cx="257" cy="456" r="1.84" fill="#ffffff" opacity="0.25"/>
+  <circle cx="245" cy="534" r="1.36" fill="#ffffff" opacity="0.25"/>
+  <circle cx="128" cy="50" r="1.83" fill="#ffffff" opacity="0.25"/>
+  <circle cx="225" cy="53" r="1.82" fill="#ffffff" opacity="0.25"/>
+  <circle cx="242" cy="266" r="1.19" fill="#ffffff" opacity="0.25"/>
+  <circle cx="384" cy="254" r="1.31" fill="#ffffff" opacity="0.25"/>
+  <circle cx="148" cy="475" r="1.22" fill="#ffffff" opacity="0.25"/>
+  <circle cx="314" cy="327" r="1.11" fill="#ffffff" opacity="0.25"/>
+  <circle cx="160" cy="350" r="1.10" fill="#ffffff" opacity="0.25"/>
+  <circle cx="144" cy="390" r="1.51" fill="#ffffff" opacity="0.25"/>
+  <circle cx="276" cy="356" r="1.73" fill="#ffffff" opacity="0.25"/>
+  <circle cx="300" cy="201" r="1.00" fill="#ffffff" opacity="0.25"/>
+  <circle cx="246" cy="580" r="1.18" fill="#ffffff" opacity="0.25"/>
+  <circle cx="299" cy="148" r="1.71" fill="#ffffff" opacity="0.25"/>
+  <circle cx="299" cy="156" r="1.04" fill="#ffffff" opacity="0.25"/>
+  <circle cx="312" cy="207" r="1.07" fill="#ffffff" opacity="0.25"/>
+  <circle cx="356" cy="142" r="1.49" fill="#ffffff" opacity="0.25"/>
+  <circle cx="8" cy="524" r="1.31" fill="#ffffff" opacity="0.25"/>
     <rect x="26" y="470" width="36" height="4" fill="#E50914"/>
+  <text x="26" y="462" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.5" fill="rgba(255,255,255,0.75)">THRILLER</text>
   <text x="29" y="519" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="rgba(0,0,0,0.55)">Midnight</text>
   <text x="26" y="516" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#ffffff">Midnight</text>
   <text x="29" y="559" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="rgba(0,0,0,0.55)">Courier</text>

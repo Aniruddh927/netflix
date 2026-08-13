@@ -55,10 +55,31 @@
   window.Auth = { getUser, signIn, signOut };
 
   const isLoginPage = /login\.html(\?.*)?$/.test(location.pathname);
+  const isProfilesPage = /profiles\.html(\?.*)?$/.test(location.pathname);
 
-  // Gate: every page except the login page requires a signed-in profile.
-  if (!isLoginPage && !getUser()) {
+  /** Active profile for the signed-in user (set on the "Who's watching?" page). */
+  function getActiveProfile() {
+    const user = getUser();
+    if (!user) return null;
+    try {
+      const suffix = (user.email || 'anon').toLowerCase();
+      const profiles = JSON.parse(localStorage.getItem('netflix-profiles-' + suffix)) || [];
+      const activeId = localStorage.getItem('netflix-active-profile-' + suffix);
+      return profiles.find((p) => p.id === activeId) || null;
+    } catch (e) {
+      return null;
+    }
+  }
+  window.Auth.getActiveProfile = getActiveProfile;
+
+  // Gate: every page except login/profiles requires a signed-in profile.
+  if (!isLoginPage && !isProfilesPage && !getUser()) {
     location.replace('login.html');
+  }
+
+  // Netflix flow: signed in but no profile chosen → "Who's watching?" first.
+  if (!isLoginPage && !isProfilesPage && getUser() && !getActiveProfile()) {
+    location.replace('profiles.html');
   }
 
   // Wire the account menu (avatar + dropdown) on browsing pages.
@@ -69,7 +90,9 @@
       if (!btn || !menu) return;
 
       const user = getUser() || {};
-      if (user.avatar) {
+      const active = getActiveProfile();
+      // With a chosen profile show the profile avatar; otherwise the account photo/initial.
+      if (!active && user.avatar) {
         const img = document.createElement('img');
         img.src = user.avatar;
         img.alt = user.name || 'Account';
@@ -79,11 +102,11 @@
         btn.textContent = '';
         btn.appendChild(img);
       } else {
-        btn.textContent = initialOf(user);
+        btn.textContent = initialOf(active || user);
       }
 
       const nameEl = document.getElementById('user-menu-name');
-      if (nameEl) nameEl.textContent = user.name || user.email || 'Signed in';
+      if (nameEl) nameEl.textContent = active ? active.name : (user.name || user.email || 'Signed in');
 
       btn.addEventListener('click', () => {
         const hidden = menu.hidden;

@@ -1,10 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Mothlight backdrop">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#3d1d3a"/><stop offset="1" stop-color="#170b1a"/>
+      <stop offset="0" stop-color="#3d1d3a"/><stop offset="0.5" stop-color="#2a142a"/><stop offset="1" stop-color="#170b1a"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.72" cy="0.18" r="0.85">
       <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/>
     </radialGradient>
     <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0.45" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
@@ -25,8 +28,35 @@
   <line x1="347" y1="228" x2="827" y2="0" stroke="#ffffff" stroke-width="1"/>
     </g>
     <text x="752" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#E50914" text-anchor="end">N</text>
+    <rect width="800" height="450" fill="url(#vignette)"/>
     <rect width="800" height="450" fill="url(#fade)"/>
+  <circle cx="618" cy="321" r="1.75" fill="#ffffff" opacity="0.25"/>
+  <circle cx="244" cy="93" r="1.68" fill="#ffffff" opacity="0.25"/>
+  <circle cx="785" cy="119" r="1.09" fill="#ffffff" opacity="0.25"/>
+  <circle cx="212" cy="33" r="1.11" fill="#ffffff" opacity="0.25"/>
+  <circle cx="283" cy="166" r="1.48" fill="#ffffff" opacity="0.25"/>
+  <circle cx="539" cy="271" r="1.23" fill="#ffffff" opacity="0.25"/>
+  <circle cx="255" cy="113" r="1.89" fill="#ffffff" opacity="0.25"/>
+  <circle cx="665" cy="279" r="1.39" fill="#ffffff" opacity="0.25"/>
+  <circle cx="763" cy="94" r="1.78" fill="#ffffff" opacity="0.25"/>
+  <circle cx="516" cy="127" r="1.48" fill="#ffffff" opacity="0.25"/>
+  <circle cx="686" cy="218" r="1.45" fill="#ffffff" opacity="0.25"/>
+  <circle cx="468" cy="298" r="1.32" fill="#ffffff" opacity="0.25"/>
+  <circle cx="749" cy="17" r="1.48" fill="#ffffff" opacity="0.25"/>
+  <circle cx="161" cy="22" r="1.66" fill="#ffffff" opacity="0.25"/>
+  <circle cx="28" cy="408" r="1.76" fill="#ffffff" opacity="0.25"/>
+  <circle cx="795" cy="64" r="1.87" fill="#ffffff" opacity="0.25"/>
+  <circle cx="129" cy="343" r="1.62" fill="#ffffff" opacity="0.25"/>
+  <circle cx="166" cy="288" r="1.25" fill="#ffffff" opacity="0.25"/>
+  <circle cx="165" cy="141" r="1.26" fill="#ffffff" opacity="0.25"/>
+  <circle cx="133" cy="360" r="1.10" fill="#ffffff" opacity="0.25"/>
+  <circle cx="103" cy="181" r="1.65" fill="#ffffff" opacity="0.25"/>
+  <circle cx="110" cy="249" r="1.50" fill="#ffffff" opacity="0.25"/>
+  <circle cx="198" cy="120" r="1.68" fill="#ffffff" opacity="0.25"/>
+  <circle cx="677" cy="260" r="1.51" fill="#ffffff" opacity="0.25"/>
+  <circle cx="471" cy="340" r="1.32" fill="#ffffff" opacity="0.25"/>
     <rect x="48" y="316" width="44" height="5" fill="#E50914"/>
+  <text x="48" y="306" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.5" fill="rgba(255,255,255,0.75)">HORROR</text>
   <text x="51" y="391" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="rgba(0,0,0,0.55)">Mothlight</text>
   <text x="48" y="388" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="#ffffff">Mothlight</text>
   </g>

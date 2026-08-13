@@ -33,7 +33,7 @@
         .trim()
         .replace(/\b\w/g, (c) => c.toUpperCase());
       Auth.signIn({ name: name || 'Viewer', email: em, avatar: null }, 'demo email');
-      location.replace('index.html');
+      location.replace('profiles.html');
     });
 
     /* --- One-click demo login for quick testing ------------------------- */
@@ -99,7 +99,7 @@
           },
           'google'
         );
-        location.replace('index.html');
+        location.replace('profiles.html');
       } catch (e) {
         err.textContent = 'Google sign-in failed. Please use the email form.';
       }

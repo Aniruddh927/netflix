@@ -1,10 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="Quantum Drift poster">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0a1931"/><stop offset="1" stop-color="#2c0e37"/>
+      <stop offset="0" stop-color="#0a1931"/><stop offset="0.5" stop-color="#1b1434"/><stop offset="1" stop-color="#2c0e37"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.72" cy="0.18" r="0.85">
       <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/>
     </radialGradient>
     <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0.45" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
@@ -25,8 +28,35 @@
   <line x1="13" y1="12" x2="253" y2="0" stroke="#ffffff" stroke-width="1"/>
     </g>
     <text x="368" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#E50914" text-anchor="end">N</text>
+    <rect width="400" height="600" fill="url(#vignette)"/>
     <rect width="400" height="600" fill="url(#fade)"/>
+  <circle cx="161" cy="269" r="1.96" fill="#ffffff" opacity="0.25"/>
+  <circle cx="109" cy="76" r="1.05" fill="#ffffff" opacity="0.25"/>
+  <circle cx="112" cy="5" r="1.37" fill="#ffffff" opacity="0.25"/>
+  <circle cx="261" cy="303" r="1.04" fill="#ffffff" opacity="0.25"/>
+  <circle cx="14" cy="466" r="1.99" fill="#ffffff" opacity="0.25"/>
+  <circle cx="379" cy="188" r="1.31" fill="#ffffff" opacity="0.25"/>
+  <circle cx="140" cy="160" r="1.74" fill="#ffffff" opacity="0.25"/>
+  <circle cx="254" cy="1" r="1.67" fill="#ffffff" opacity="0.25"/>
+  <circle cx="311" cy="63" r="1.19" fill="#ffffff" opacity="0.25"/>
+  <circle cx="263" cy="332" r="1.43" fill="#ffffff" opacity="0.25"/>
+  <circle cx="219" cy="586" r="1.69" fill="#ffffff" opacity="0.25"/>
+  <circle cx="285" cy="501" r="1.30" fill="#ffffff" opacity="0.25"/>
+  <circle cx="16" cy="383" r="1.89" fill="#ffffff" opacity="0.25"/>
+  <circle cx="378" cy="96" r="1.80" fill="#ffffff" opacity="0.25"/>
+  <circle cx="210" cy="185" r="1.54" fill="#ffffff" opacity="0.25"/>
+  <circle cx="377" cy="206" r="1.38" fill="#ffffff" opacity="0.25"/>
+  <circle cx="96" cy="290" r="1.83" fill="#ffffff" opacity="0.25"/>
+  <circle cx="374" cy="584" r="1.97" fill="#ffffff" opacity="0.25"/>
+  <circle cx="121" cy="140" r="1.87" fill="#ffffff" opacity="0.25"/>
+  <circle cx="231" cy="141" r="1.33" fill="#ffffff" opacity="0.25"/>
+  <circle cx="183" cy="540" r="1.70" fill="#ffffff" opacity="0.25"/>
+  <circle cx="271" cy="253" r="1.56" fill="#ffffff" opacity="0.25"/>
+  <circle cx="271" cy="434" r="1.62" fill="#ffffff" opacity="0.25"/>
+  <circle cx="21" cy="538" r="1.70" fill="#ffffff" opacity="0.25"/>
+  <circle cx="275" cy="180" r="1.30" fill="#ffffff" opacity="0.25"/>
     <rect x="26" y="510" width="36" height="4" fill="#E50914"/>
+  <text x="26" y="502" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.5" fill="rgba(255,255,255,0.75)">SCI-FI</text>
   <text x="29" y="559" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="rgba(0,0,0,0.55)">Quantum Drift</text>
   <text x="26" y="556" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#ffffff">Quantum Drift</text>
   </g>

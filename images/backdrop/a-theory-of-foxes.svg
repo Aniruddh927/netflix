@@ -1,10 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="A Theory of Foxes backdrop">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#1f4037"/><stop offset="1" stop-color="#245c4f"/>
+      <stop offset="0" stop-color="#1f4037"/><stop offset="0.5" stop-color="#224e43"/><stop offset="1" stop-color="#245c4f"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.72" cy="0.18" r="0.85">
       <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/>
     </radialGradient>
     <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0.45" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
@@ -25,8 +28,35 @@
   <line x1="73" y1="124" x2="553" y2="0" stroke="#ffffff" stroke-width="1"/>
     </g>
     <text x="752" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#E50914" text-anchor="end">N</text>
+    <rect width="800" height="450" fill="url(#vignette)"/>
     <rect width="800" height="450" fill="url(#fade)"/>
+  <circle cx="270" cy="152" r="1.76" fill="#ffffff" opacity="0.25"/>
+  <circle cx="574" cy="57" r="1.87" fill="#ffffff" opacity="0.25"/>
+  <circle cx="701" cy="63" r="1.50" fill="#ffffff" opacity="0.25"/>
+  <circle cx="115" cy="436" r="1.56" fill="#ffffff" opacity="0.25"/>
+  <circle cx="696" cy="349" r="1.44" fill="#ffffff" opacity="0.25"/>
+  <circle cx="294" cy="105" r="1.29" fill="#ffffff" opacity="0.25"/>
+  <circle cx="673" cy="210" r="1.36" fill="#ffffff" opacity="0.25"/>
+  <circle cx="159" cy="73" r="1.02" fill="#ffffff" opacity="0.25"/>
+  <circle cx="580" cy="272" r="1.68" fill="#ffffff" opacity="0.25"/>
+  <circle cx="563" cy="211" r="1.82" fill="#ffffff" opacity="0.25"/>
+  <circle cx="16" cy="442" r="1.00" fill="#ffffff" opacity="0.25"/>
+  <circle cx="258" cy="144" r="1.91" fill="#ffffff" opacity="0.25"/>
+  <circle cx="749" cy="32" r="1.93" fill="#ffffff" opacity="0.25"/>
+  <circle cx="67" cy="387" r="2.00" fill="#ffffff" opacity="0.25"/>
+  <circle cx="143" cy="367" r="1.15" fill="#ffffff" opacity="0.25"/>
+  <circle cx="305" cy="306" r="1.72" fill="#ffffff" opacity="0.25"/>
+  <circle cx="514" cy="439" r="1.37" fill="#ffffff" opacity="0.25"/>
+  <circle cx="773" cy="203" r="1.84" fill="#ffffff" opacity="0.25"/>
+  <circle cx="48" cy="61" r="1.29" fill="#ffffff" opacity="0.25"/>
+  <circle cx="745" cy="58" r="1.88" fill="#ffffff" opacity="0.25"/>
+  <circle cx="453" cy="153" r="1.56" fill="#ffffff" opacity="0.25"/>
+  <circle cx="617" cy="211" r="1.60" fill="#ffffff" opacity="0.25"/>
+  <circle cx="193" cy="222" r="1.57" fill="#ffffff" opacity="0.25"/>
+  <circle cx="496" cy="404" r="1.24" fill="#ffffff" opacity="0.25"/>
+  <circle cx="46" cy="164" r="1.08" fill="#ffffff" opacity="0.25"/>
     <rect x="48" y="316" width="44" height="5" fill="#E50914"/>
+  <text x="48" y="306" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.5" fill="rgba(255,255,255,0.75)">FANTASY</text>
   <text x="51" y="391" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="rgba(0,0,0,0.55)">A Theory of Foxes</text>
   <text x="48" y="388" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="#ffffff">A Theory of Foxes</text>
   </g>

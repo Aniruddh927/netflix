@@ -931,7 +931,8 @@ body.scrolled #navbar::before {
     display: none;
   }
 
-  .card:hover {
+  .card:hover,
+  .card--thumb:hover {
     transform: none;
     box-shadow: none;
   }
@@ -1100,5 +1101,90 @@ body.scrolled #navbar::before {
   }
   to {
     width: 100%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   14. Top-10 trending thumbs, Continue Watching & hero badge
+   -------------------------------------------------------------------------- */
+
+/* Landscape 16:9 thumbnail cards ("Trending Now" Top-10 + Continue Watching).
+   Inherits the .card base (flex sizing, radius, cursor, transitions, focus). */
+.card--thumb {
+  width: 290px;
+  aspect-ratio: 16 / 9;
+}
+
+/* Landscape cards scale a touch less than portrait posters */
+.card--thumb:hover {
+  transform: scale(1.08);
+}
+
+/* The hover info bar slides in above the rank number */
+.card--thumb .card__info {
+  z-index: 2;
+}
+
+/* Giant outlined rank number (Top-10, first ten items only) */
+.card--num {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 11rem;
+  font-weight: 800;
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 3px #7a7a7a;
+  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Red progress bar at the bottom of Continue Watching cards */
+.card__progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.card__progress-fill {
+  height: 100%;
+  background: var(--red);
+}
+
+/* Hero SERIES / FILM badge above the title */
+.hero__badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.hero__badge-n {
+  font-size: 1.5em;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+  color: var(--red);
+}
+
+@media (max-width: 768px) {
+  .card--thumb {
+    width: 180px;
+  }
+
+  .card--num {
+    font-size: 6rem;
   }
 }

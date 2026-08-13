@@ -1,10 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="The Borrowed Hour backdrop">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#2f3e46"/><stop offset="1" stop-color="#4a5d66"/>
+      <stop offset="0" stop-color="#2f3e46"/><stop offset="0.5" stop-color="#3d4e56"/><stop offset="1" stop-color="#4a5d66"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.72" cy="0.18" r="0.85">
       <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/>
     </radialGradient>
     <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0.45" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
@@ -25,8 +28,35 @@
   <line x1="263" y1="353" x2="743" y2="0" stroke="#ffffff" stroke-width="1"/>
     </g>
     <text x="752" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#E50914" text-anchor="end">N</text>
+    <rect width="800" height="450" fill="url(#vignette)"/>
     <rect width="800" height="450" fill="url(#fade)"/>
+  <circle cx="211" cy="46" r="1.60" fill="#ffffff" opacity="0.25"/>
+  <circle cx="301" cy="324" r="1.64" fill="#ffffff" opacity="0.25"/>
+  <circle cx="248" cy="39" r="1.89" fill="#ffffff" opacity="0.25"/>
+  <circle cx="22" cy="72" r="1.02" fill="#ffffff" opacity="0.25"/>
+  <circle cx="781" cy="399" r="1.24" fill="#ffffff" opacity="0.25"/>
+  <circle cx="459" cy="125" r="1.70" fill="#ffffff" opacity="0.25"/>
+  <circle cx="758" cy="164" r="1.42" fill="#ffffff" opacity="0.25"/>
+  <circle cx="736" cy="299" r="1.30" fill="#ffffff" opacity="0.25"/>
+  <circle cx="304" cy="4" r="1.06" fill="#ffffff" opacity="0.25"/>
+  <circle cx="70" cy="328" r="1.94" fill="#ffffff" opacity="0.25"/>
+  <circle cx="576" cy="294" r="1.56" fill="#ffffff" opacity="0.25"/>
+  <circle cx="510" cy="118" r="1.04" fill="#ffffff" opacity="0.25"/>
+  <circle cx="278" cy="272" r="1.29" fill="#ffffff" opacity="0.25"/>
+  <circle cx="179" cy="212" r="1.63" fill="#ffffff" opacity="0.25"/>
+  <circle cx="387" cy="341" r="1.26" fill="#ffffff" opacity="0.25"/>
+  <circle cx="700" cy="203" r="1.08" fill="#ffffff" opacity="0.25"/>
+  <circle cx="86" cy="347" r="1.62" fill="#ffffff" opacity="0.25"/>
+  <circle cx="109" cy="385" r="1.71" fill="#ffffff" opacity="0.25"/>
+  <circle cx="369" cy="137" r="1.44" fill="#ffffff" opacity="0.25"/>
+  <circle cx="593" cy="84" r="1.49" fill="#ffffff" opacity="0.25"/>
+  <circle cx="671" cy="445" r="1.18" fill="#ffffff" opacity="0.25"/>
+  <circle cx="185" cy="89" r="1.29" fill="#ffffff" opacity="0.25"/>
+  <circle cx="250" cy="143" r="1.66" fill="#ffffff" opacity="0.25"/>
+  <circle cx="683" cy="28" r="1.22" fill="#ffffff" opacity="0.25"/>
+  <circle cx="44" cy="309" r="1.15" fill="#ffffff" opacity="0.25"/>
     <rect x="48" y="316" width="44" height="5" fill="#E50914"/>
+  <text x="48" y="306" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.5" fill="rgba(255,255,255,0.75)">MYSTERY</text>
   <text x="51" y="391" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="rgba(0,0,0,0.55)">The Borrowed Hour</text>
   <text x="48" y="388" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="#ffffff">The Borrowed Hour</text>
   </g>

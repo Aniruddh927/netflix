@@ -150,7 +150,7 @@
       renderMyListRow();
     }
 
-    /** The always-present "My List" row, first in #rows. */
+    /** The always-present "My List" row, directly after Continue Watching. */
     function renderMyListRow() {
       const existing = rowsEl.querySelector('.row--mylist');
       if (existing) existing.remove();
@@ -166,7 +166,51 @@
         items.forEach((item) => cards.appendChild(renderCard(item)));
         row.appendChild(cards);
       }
-      rowsEl.prepend(row);
+      // Keep the row between Continue Watching and the genre rows.
+      const anchor = rowsEl.querySelector('.row--continue');
+      if (anchor) rowsEl.insertBefore(row, anchor);
+      else rowsEl.prepend(row);
+    }
+
+    /** Deterministic per-id progress percent for Continue Watching cards. */
+    function progressForId(id) {
+      let h = 0;
+      const s = String(id);
+      for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+      return (h % 70) + 10; // 10–79%
+    }
+
+    /** Display name of the active profile ("You" when none is chosen). */
+    function activeProfileName() {
+      try {
+        const active =
+          window.Auth && typeof Auth.getActiveProfile === 'function' ? Auth.getActiveProfile() : null;
+        if (active && active.name) return active.name;
+      } catch (e) {
+        /* storage unavailable — ignore */
+      }
+      return 'You';
+    }
+
+    /** The "Continue Watching" row, always first in #rows (before My List). */
+    function renderContinueRow() {
+      const existing = rowsEl.querySelector('.row--continue');
+      if (existing) existing.remove();
+
+      const row = el('section', 'row row--continue');
+      row.appendChild(el('h2', 'row__title', `Continue Watching for ${activeProfileName()}`));
+
+      const cards = el('div', 'row__cards');
+      cards.style.overflowX = 'auto';
+      // Deterministic selection and progress — deliberately no Math.random.
+      CATALOG.slice(0, 6).forEach((item) => {
+        cards.appendChild(renderCard(item, { thumb: true, progress: progressForId(item.id) }));
+      });
+      row.appendChild(cards);
+
+      const mylist = rowsEl.querySelector('.row--mylist');
+      if (mylist) rowsEl.insertBefore(row, mylist);
+      else rowsEl.prepend(row);
     }
 
     /** Fake "trailer" player overlaid on the modal (demo only). */
@@ -218,13 +262,13 @@
      * item's two-color gradient, with the title overlaid bottom-left
      * (the stylesheet positions the span via .card__poster).
      */
-    function buildPoster(item) {
+    function buildPoster(item, thumb) {
       const poster = el('div', 'card__poster');
       // Gradient fallback behind the generated SVG artwork.
       const [g1, g2] = item.gradient;
       poster.style.background = `linear-gradient(135deg, ${g1}, ${g2})`;
       const img = el('img', 'card__poster-img');
-      img.src = `images/poster/${item.id}.svg`;
+      img.src = thumb ? `images/thumb/${item.id}.svg` : `images/poster/${item.id}.svg`;
       img.alt = item.title;
       img.loading = 'lazy';
       poster.appendChild(img);
@@ -236,13 +280,14 @@
      * with match %, duration and a round play button. Clicking the card
      * (or pressing Enter when focused) opens the detail modal.
      */
-    function renderCard(item) {
-      const card = el('div', 'card');
+    function renderCard(item, options) {
+      const opts = options || {};
+      const card = el('div', opts.thumb ? 'card card--thumb' : 'card');
       card.tabIndex = 0;
       card.setAttribute('role', 'button');
       card.setAttribute('aria-label', `${item.title} — open details`);
 
-      card.appendChild(buildPoster(item));
+      card.appendChild(buildPoster(item, opts.thumb));
 
       const info = el('div', 'card__info');
       info.appendChild(el('p', 'match', `${item.match}% Match`));
@@ -267,6 +312,22 @@
         toggleMyList(item, addBtn);
       });
       card.appendChild(addBtn);
+
+      // Top-10 rank number (first ten trending items only).
+      if (opts.num) {
+        const num = el('span', 'card__num', String(opts.num));
+        num.setAttribute('aria-hidden', 'true');
+        card.appendChild(num);
+      }
+
+      // Continue Watching progress bar (width set inline by the caller).
+      if (typeof opts.progress === 'number') {
+        const bar = el('div', 'card__progress');
+        const fill = el('div', 'card__progress-fill');
+        fill.style.width = `${opts.progress}%`;
+        bar.appendChild(fill);
+        card.appendChild(bar);
+      }
 
       card.addEventListener('click', () => openModal(item));
       card.addEventListener('keydown', (event) => {
@@ -316,7 +377,14 @@
       // Inline overflow-x guarantees native horizontal swipe on touch
       // devices (the stylesheet also styles .row__cards with overflow-x).
       cards.style.overflowX = 'auto';
-      items.forEach((item) => cards.appendChild(renderCard(item)));
+      // "Trending Now" is Netflix's Top-10 row: landscape thumbs + giant rank
+      // numbers (1–10); every other row keeps the portrait posters.
+      const isTopTen = label === 'Trending Now';
+      items.forEach((item, index) => {
+        cards.appendChild(
+          renderCard(item, isTopTen ? { thumb: true, num: index < 10 ? index + 1 : null } : null)
+        );
+      });
       row.appendChild(cards);
 
       // Step of ~3 card widths, measured from the rendered cards.
@@ -344,12 +412,14 @@
         const matches = itemsForRow(label);
         if (matches.length === 0) return; // skip rows with no content
         const row = renderRow(label, shuffle(matches)); // shuffled within the row
+        if (label === 'New & Popular') row.classList.add('row--new');
         state.rows.push(row);
         fragment.appendChild(row);
       });
 
       rowsEl.appendChild(fragment);
       renderMyListRow();
+      renderContinueRow();
     }
 
     /* ----------------------------------------------------------------
@@ -362,6 +432,10 @@
       state.heroIndex = 0;
 
       const content = el('div', 'hero__content');
+      const badgeEl = el('div', 'hero__badge');
+      badgeEl.appendChild(el('span', 'hero__badge-n', 'N'));
+      const badgeLabelEl = el('span', 'hero__badge-label');
+      badgeEl.appendChild(badgeLabelEl);
       const titleEl = el('h1', 'hero__title');
       const metaEl = el('div', 'hero__meta');
       const descEl = el('p', 'hero__desc');
@@ -372,6 +446,7 @@
       buttonsEl.appendChild(playBtn);
       buttonsEl.appendChild(infoBtn);
 
+      content.appendChild(badgeEl);
       content.appendChild(titleEl);
       content.appendChild(metaEl);
       content.appendChild(descEl);
@@ -385,6 +460,8 @@
       /** Re-render the banner for one item (content + gradient background). */
       function showItem(item) {
         currentItem = item;
+        badgeLabelEl.textContent =
+          item.duration && item.duration.includes('Season') ? 'SERIES' : 'FILM';
         titleEl.textContent = item.title;
 
         render(
@@ -500,13 +577,13 @@
       if (query === '') {
         heroEl.classList.remove('hidden');
         state.rows.forEach((row) => row.classList.remove('hidden'));
-        rowsEl.querySelectorAll('.row--mylist').forEach((row) => row.classList.remove('hidden'));
+        rowsEl.querySelectorAll('.row--mylist, .row--continue').forEach((row) => row.classList.remove('hidden'));
         return;
       }
 
       heroEl.classList.add('hidden');
       state.rows.forEach((row) => row.classList.add('hidden'));
-      rowsEl.querySelectorAll('.row--mylist').forEach((row) => row.classList.add('hidden'));
+      rowsEl.querySelectorAll('.row--mylist, .row--continue').forEach((row) => row.classList.add('hidden'));
 
       const matches = CATALOG.filter((item) => matchesQuery(item, query));
 
@@ -559,18 +636,22 @@
       searchDebounce = setTimeout(() => applySearch(searchInput.value), 250);
     });
 
-    // My List nav link: scroll to (and briefly highlight) the My List row.
-    const navMyList = document.getElementById('nav-mylist');
-    if (navMyList) {
-      navMyList.addEventListener('click', (event) => {
+    // Navbar links ("My List", "New & Popular"): scroll to their row and
+    // briefly highlight it (reuses .row--flash).
+    function wireNavScroll(id, rowSelector) {
+      const link = document.getElementById(id);
+      if (!link) return;
+      link.addEventListener('click', (event) => {
         event.preventDefault();
-        const row = rowsEl.querySelector('.row--mylist');
+        const row = rowsEl.querySelector(rowSelector);
         if (!row) return;
         row.scrollIntoView({ behavior: 'smooth', block: 'start' });
         row.classList.add('row--flash');
         setTimeout(() => row.classList.remove('row--flash'), 1600);
       });
     }
+    wireNavScroll('nav-mylist', '.row--mylist');
+    wireNavScroll('nav-new', '.row--new');
 
     // Navbar scroll effect.
     window.addEventListener('scroll', onScroll, { passive: true });

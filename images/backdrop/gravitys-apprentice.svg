@@ -1,10 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Gravity's Apprentice backdrop">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#000428"/><stop offset="1" stop-color="#004e92"/>
+      <stop offset="0" stop-color="#000428"/><stop offset="0.5" stop-color="#00295d"/><stop offset="1" stop-color="#004e92"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.72" cy="0.18" r="0.85">
       <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/>
     </radialGradient>
     <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0.45" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
@@ -25,8 +28,35 @@
   <line x1="273" y1="410" x2="753" y2="50" stroke="#ffffff" stroke-width="1"/>
     </g>
     <text x="752" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#E50914" text-anchor="end">N</text>
+    <rect width="800" height="450" fill="url(#vignette)"/>
     <rect width="800" height="450" fill="url(#fade)"/>
+  <circle cx="325" cy="425" r="1.83" fill="#ffffff" opacity="0.25"/>
+  <circle cx="642" cy="60" r="1.13" fill="#ffffff" opacity="0.25"/>
+  <circle cx="48" cy="275" r="1.14" fill="#ffffff" opacity="0.25"/>
+  <circle cx="118" cy="191" r="1.53" fill="#ffffff" opacity="0.25"/>
+  <circle cx="760" cy="364" r="1.87" fill="#ffffff" opacity="0.25"/>
+  <circle cx="588" cy="151" r="1.49" fill="#ffffff" opacity="0.25"/>
+  <circle cx="115" cy="187" r="1.57" fill="#ffffff" opacity="0.25"/>
+  <circle cx="182" cy="355" r="1.89" fill="#ffffff" opacity="0.25"/>
+  <circle cx="2" cy="311" r="1.41" fill="#ffffff" opacity="0.25"/>
+  <circle cx="749" cy="78" r="1.51" fill="#ffffff" opacity="0.25"/>
+  <circle cx="551" cy="257" r="1.69" fill="#ffffff" opacity="0.25"/>
+  <circle cx="178" cy="129" r="1.12" fill="#ffffff" opacity="0.25"/>
+  <circle cx="550" cy="228" r="1.22" fill="#ffffff" opacity="0.25"/>
+  <circle cx="498" cy="106" r="1.19" fill="#ffffff" opacity="0.25"/>
+  <circle cx="775" cy="397" r="1.28" fill="#ffffff" opacity="0.25"/>
+  <circle cx="708" cy="233" r="1.52" fill="#ffffff" opacity="0.25"/>
+  <circle cx="340" cy="338" r="1.54" fill="#ffffff" opacity="0.25"/>
+  <circle cx="451" cy="69" r="1.11" fill="#ffffff" opacity="0.25"/>
+  <circle cx="467" cy="29" r="1.82" fill="#ffffff" opacity="0.25"/>
+  <circle cx="602" cy="399" r="1.75" fill="#ffffff" opacity="0.25"/>
+  <circle cx="482" cy="125" r="1.54" fill="#ffffff" opacity="0.25"/>
+  <circle cx="273" cy="73" r="1.13" fill="#ffffff" opacity="0.25"/>
+  <circle cx="244" cy="281" r="1.93" fill="#ffffff" opacity="0.25"/>
+  <circle cx="269" cy="89" r="1.71" fill="#ffffff" opacity="0.25"/>
+  <circle cx="155" cy="341" r="1.06" fill="#ffffff" opacity="0.25"/>
     <rect x="48" y="316" width="44" height="5" fill="#E50914"/>
+  <text x="48" y="306" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.5" fill="rgba(255,255,255,0.75)">SCI-FI</text>
   <text x="51" y="391" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="rgba(0,0,0,0.55)">Gravity's Apprentice</text>
   <text x="48" y="388" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="#ffffff">Gravity's Apprentice</text>
   </g>

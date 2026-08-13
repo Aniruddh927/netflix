@@ -1,10 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="The Seventh Tide backdrop">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#182240"/><stop offset="1" stop-color="#341a4d"/>
+      <stop offset="0" stop-color="#182240"/><stop offset="0.5" stop-color="#261e47"/><stop offset="1" stop-color="#341a4d"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.72" cy="0.18" r="0.85">
       <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/>
     </radialGradient>
     <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0.45" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
@@ -25,8 +28,35 @@
   <line x1="242" y1="368" x2="722" y2="8" stroke="#ffffff" stroke-width="1"/>
     </g>
     <text x="752" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#E50914" text-anchor="end">N</text>
+    <rect width="800" height="450" fill="url(#vignette)"/>
     <rect width="800" height="450" fill="url(#fade)"/>
+  <circle cx="531" cy="270" r="1.73" fill="#ffffff" opacity="0.25"/>
+  <circle cx="214" cy="434" r="1.97" fill="#ffffff" opacity="0.25"/>
+  <circle cx="12" cy="411" r="1.37" fill="#ffffff" opacity="0.25"/>
+  <circle cx="442" cy="102" r="1.11" fill="#ffffff" opacity="0.25"/>
+  <circle cx="463" cy="316" r="1.20" fill="#ffffff" opacity="0.25"/>
+  <circle cx="93" cy="343" r="1.87" fill="#ffffff" opacity="0.25"/>
+  <circle cx="598" cy="400" r="1.51" fill="#ffffff" opacity="0.25"/>
+  <circle cx="558" cy="333" r="1.40" fill="#ffffff" opacity="0.25"/>
+  <circle cx="399" cy="437" r="1.25" fill="#ffffff" opacity="0.25"/>
+  <circle cx="563" cy="441" r="1.55" fill="#ffffff" opacity="0.25"/>
+  <circle cx="302" cy="113" r="1.58" fill="#ffffff" opacity="0.25"/>
+  <circle cx="465" cy="46" r="1.80" fill="#ffffff" opacity="0.25"/>
+  <circle cx="130" cy="180" r="1.63" fill="#ffffff" opacity="0.25"/>
+  <circle cx="741" cy="352" r="1.96" fill="#ffffff" opacity="0.25"/>
+  <circle cx="758" cy="4" r="1.92" fill="#ffffff" opacity="0.25"/>
+  <circle cx="143" cy="197" r="1.96" fill="#ffffff" opacity="0.25"/>
+  <circle cx="323" cy="366" r="1.07" fill="#ffffff" opacity="0.25"/>
+  <circle cx="507" cy="434" r="1.83" fill="#ffffff" opacity="0.25"/>
+  <circle cx="471" cy="294" r="1.85" fill="#ffffff" opacity="0.25"/>
+  <circle cx="399" cy="440" r="1.43" fill="#ffffff" opacity="0.25"/>
+  <circle cx="517" cy="338" r="1.60" fill="#ffffff" opacity="0.25"/>
+  <circle cx="113" cy="307" r="1.19" fill="#ffffff" opacity="0.25"/>
+  <circle cx="82" cy="115" r="1.15" fill="#ffffff" opacity="0.25"/>
+  <circle cx="125" cy="42" r="1.83" fill="#ffffff" opacity="0.25"/>
+  <circle cx="476" cy="203" r="1.10" fill="#ffffff" opacity="0.25"/>
     <rect x="48" y="316" width="44" height="5" fill="#E50914"/>
+  <text x="48" y="306" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.5" fill="rgba(255,255,255,0.75)">HORROR</text>
   <text x="51" y="391" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="rgba(0,0,0,0.55)">The Seventh Tide</text>
   <text x="48" y="388" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="#ffffff">The Seventh Tide</text>
   </g>

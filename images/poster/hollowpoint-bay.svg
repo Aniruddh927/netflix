@@ -1,10 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="Hollowpoint Bay poster">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#2b2d42"/><stop offset="1" stop-color="#3d405b"/>
+      <stop offset="0" stop-color="#2b2d42"/><stop offset="0.5" stop-color="#34374f"/><stop offset="1" stop-color="#3d405b"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.72" cy="0.18" r="0.85">
       <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/>
     </radialGradient>
     <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0.45" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
@@ -25,8 +28,35 @@
   <line x1="68" y1="8" x2="308" y2="0" stroke="#ffffff" stroke-width="1"/>
     </g>
     <text x="368" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#E50914" text-anchor="end">N</text>
+    <rect width="400" height="600" fill="url(#vignette)"/>
     <rect width="400" height="600" fill="url(#fade)"/>
+  <circle cx="341" cy="312" r="1.66" fill="#ffffff" opacity="0.25"/>
+  <circle cx="248" cy="94" r="1.00" fill="#ffffff" opacity="0.25"/>
+  <circle cx="395" cy="235" r="1.06" fill="#ffffff" opacity="0.25"/>
+  <circle cx="341" cy="379" r="1.63" fill="#ffffff" opacity="0.25"/>
+  <circle cx="350" cy="296" r="1.94" fill="#ffffff" opacity="0.25"/>
+  <circle cx="85" cy="484" r="1.44" fill="#ffffff" opacity="0.25"/>
+  <circle cx="187" cy="331" r="1.29" fill="#ffffff" opacity="0.25"/>
+  <circle cx="60" cy="97" r="1.96" fill="#ffffff" opacity="0.25"/>
+  <circle cx="244" cy="211" r="1.60" fill="#ffffff" opacity="0.25"/>
+  <circle cx="206" cy="144" r="1.72" fill="#ffffff" opacity="0.25"/>
+  <circle cx="362" cy="295" r="1.36" fill="#ffffff" opacity="0.25"/>
+  <circle cx="126" cy="380" r="1.08" fill="#ffffff" opacity="0.25"/>
+  <circle cx="184" cy="336" r="1.79" fill="#ffffff" opacity="0.25"/>
+  <circle cx="135" cy="138" r="1.39" fill="#ffffff" opacity="0.25"/>
+  <circle cx="28" cy="582" r="1.08" fill="#ffffff" opacity="0.25"/>
+  <circle cx="21" cy="412" r="1.43" fill="#ffffff" opacity="0.25"/>
+  <circle cx="179" cy="575" r="1.96" fill="#ffffff" opacity="0.25"/>
+  <circle cx="148" cy="594" r="1.64" fill="#ffffff" opacity="0.25"/>
+  <circle cx="389" cy="457" r="1.04" fill="#ffffff" opacity="0.25"/>
+  <circle cx="185" cy="437" r="1.67" fill="#ffffff" opacity="0.25"/>
+  <circle cx="14" cy="550" r="1.60" fill="#ffffff" opacity="0.25"/>
+  <circle cx="41" cy="396" r="1.05" fill="#ffffff" opacity="0.25"/>
+  <circle cx="88" cy="254" r="1.77" fill="#ffffff" opacity="0.25"/>
+  <circle cx="228" cy="347" r="1.70" fill="#ffffff" opacity="0.25"/>
+  <circle cx="350" cy="164" r="1.84" fill="#ffffff" opacity="0.25"/>
     <rect x="26" y="470" width="36" height="4" fill="#E50914"/>
+  <text x="26" y="462" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.5" fill="rgba(255,255,255,0.75)">CRIME</text>
   <text x="29" y="519" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="rgba(0,0,0,0.55)">Hollowpoint</text>
   <text x="26" y="516" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#ffffff">Hollowpoint</text>
   <text x="29" y="559" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="rgba(0,0,0,0.55)">Bay</text>

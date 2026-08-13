@@ -1,10 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Beneath the Ice Fields backdrop">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0f0c29"/><stop offset="1" stop-color="#24243e"/>
+      <stop offset="0" stop-color="#0f0c29"/><stop offset="0.5" stop-color="#1a1834"/><stop offset="1" stop-color="#24243e"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.72" cy="0.18" r="0.85">
       <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/>
     </radialGradient>
     <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0.45" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
@@ -25,8 +28,35 @@
   <line x1="143" y1="209" x2="623" y2="0" stroke="#ffffff" stroke-width="1"/>
     </g>
     <text x="752" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#E50914" text-anchor="end">N</text>
+    <rect width="800" height="450" fill="url(#vignette)"/>
     <rect width="800" height="450" fill="url(#fade)"/>
+  <circle cx="108" cy="450" r="1.37" fill="#ffffff" opacity="0.25"/>
+  <circle cx="455" cy="37" r="1.26" fill="#ffffff" opacity="0.25"/>
+  <circle cx="371" cy="3" r="1.59" fill="#ffffff" opacity="0.25"/>
+  <circle cx="287" cy="331" r="1.09" fill="#ffffff" opacity="0.25"/>
+  <circle cx="687" cy="185" r="1.68" fill="#ffffff" opacity="0.25"/>
+  <circle cx="720" cy="450" r="1.40" fill="#ffffff" opacity="0.25"/>
+  <circle cx="228" cy="226" r="1.39" fill="#ffffff" opacity="0.25"/>
+  <circle cx="563" cy="369" r="1.03" fill="#ffffff" opacity="0.25"/>
+  <circle cx="282" cy="219" r="1.50" fill="#ffffff" opacity="0.25"/>
+  <circle cx="437" cy="297" r="1.40" fill="#ffffff" opacity="0.25"/>
+  <circle cx="562" cy="219" r="1.25" fill="#ffffff" opacity="0.25"/>
+  <circle cx="373" cy="292" r="1.35" fill="#ffffff" opacity="0.25"/>
+  <circle cx="400" cy="28" r="1.30" fill="#ffffff" opacity="0.25"/>
+  <circle cx="554" cy="162" r="1.12" fill="#ffffff" opacity="0.25"/>
+  <circle cx="560" cy="279" r="1.02" fill="#ffffff" opacity="0.25"/>
+  <circle cx="120" cy="437" r="1.27" fill="#ffffff" opacity="0.25"/>
+  <circle cx="126" cy="104" r="1.12" fill="#ffffff" opacity="0.25"/>
+  <circle cx="273" cy="426" r="1.91" fill="#ffffff" opacity="0.25"/>
+  <circle cx="662" cy="433" r="1.97" fill="#ffffff" opacity="0.25"/>
+  <circle cx="410" cy="419" r="1.28" fill="#ffffff" opacity="0.25"/>
+  <circle cx="728" cy="162" r="1.28" fill="#ffffff" opacity="0.25"/>
+  <circle cx="19" cy="57" r="1.63" fill="#ffffff" opacity="0.25"/>
+  <circle cx="776" cy="205" r="1.71" fill="#ffffff" opacity="0.25"/>
+  <circle cx="592" cy="293" r="1.85" fill="#ffffff" opacity="0.25"/>
+  <circle cx="214" cy="128" r="1.10" fill="#ffffff" opacity="0.25"/>
     <rect x="48" y="316" width="44" height="5" fill="#E50914"/>
+  <text x="48" y="306" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.5" fill="rgba(255,255,255,0.75)">ADVENTURE</text>
   <text x="51" y="391" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="rgba(0,0,0,0.55)">Beneath the Ice Fields</text>
   <text x="48" y="388" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="#ffffff">Beneath the Ice Fields</text>
   </g>

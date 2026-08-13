@@ -1,10 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="Bitter Root poster">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#3a2b14"/><stop offset="1" stop-color="#1c1408"/>
+      <stop offset="0" stop-color="#3a2b14"/><stop offset="0.5" stop-color="#2b200e"/><stop offset="1" stop-color="#1c1408"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.72" cy="0.18" r="0.85">
       <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/>
     </radialGradient>
     <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0.45" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
@@ -25,8 +28,35 @@
   <line x1="97" y1="325" x2="337" y2="0" stroke="#ffffff" stroke-width="1"/>
     </g>
     <text x="368" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#E50914" text-anchor="end">N</text>
+    <rect width="400" height="600" fill="url(#vignette)"/>
     <rect width="400" height="600" fill="url(#fade)"/>
+  <circle cx="1" cy="250" r="1.25" fill="#ffffff" opacity="0.25"/>
+  <circle cx="32" cy="130" r="1.64" fill="#ffffff" opacity="0.25"/>
+  <circle cx="16" cy="12" r="1.22" fill="#ffffff" opacity="0.25"/>
+  <circle cx="160" cy="19" r="1.66" fill="#ffffff" opacity="0.25"/>
+  <circle cx="347" cy="377" r="1.53" fill="#ffffff" opacity="0.25"/>
+  <circle cx="100" cy="422" r="1.61" fill="#ffffff" opacity="0.25"/>
+  <circle cx="184" cy="408" r="1.79" fill="#ffffff" opacity="0.25"/>
+  <circle cx="234" cy="242" r="1.96" fill="#ffffff" opacity="0.25"/>
+  <circle cx="70" cy="41" r="1.43" fill="#ffffff" opacity="0.25"/>
+  <circle cx="201" cy="316" r="1.20" fill="#ffffff" opacity="0.25"/>
+  <circle cx="307" cy="5" r="1.54" fill="#ffffff" opacity="0.25"/>
+  <circle cx="286" cy="283" r="1.09" fill="#ffffff" opacity="0.25"/>
+  <circle cx="128" cy="576" r="1.80" fill="#ffffff" opacity="0.25"/>
+  <circle cx="272" cy="157" r="1.41" fill="#ffffff" opacity="0.25"/>
+  <circle cx="231" cy="583" r="1.90" fill="#ffffff" opacity="0.25"/>
+  <circle cx="156" cy="355" r="1.74" fill="#ffffff" opacity="0.25"/>
+  <circle cx="359" cy="256" r="1.08" fill="#ffffff" opacity="0.25"/>
+  <circle cx="275" cy="256" r="1.91" fill="#ffffff" opacity="0.25"/>
+  <circle cx="85" cy="527" r="1.79" fill="#ffffff" opacity="0.25"/>
+  <circle cx="7" cy="253" r="1.71" fill="#ffffff" opacity="0.25"/>
+  <circle cx="141" cy="180" r="1.47" fill="#ffffff" opacity="0.25"/>
+  <circle cx="339" cy="445" r="1.28" fill="#ffffff" opacity="0.25"/>
+  <circle cx="356" cy="107" r="1.56" fill="#ffffff" opacity="0.25"/>
+  <circle cx="391" cy="430" r="1.13" fill="#ffffff" opacity="0.25"/>
+  <circle cx="177" cy="333" r="1.23" fill="#ffffff" opacity="0.25"/>
     <rect x="26" y="510" width="36" height="4" fill="#E50914"/>
+  <text x="26" y="502" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.5" fill="rgba(255,255,255,0.75)">DRAMA</text>
   <text x="29" y="559" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="rgba(0,0,0,0.55)">Bitter Root</text>
   <text x="26" y="556" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#ffffff">Bitter Root</text>
   </g>

@@ -1,10 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="Crimson Static poster">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#4a0e0e"/><stop offset="1" stop-color="#1f1c2c"/>
+      <stop offset="0" stop-color="#4a0e0e"/><stop offset="0.5" stop-color="#35151d"/><stop offset="1" stop-color="#1f1c2c"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.72" cy="0.18" r="0.85">
       <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/>
     </radialGradient>
     <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0.45" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
@@ -25,8 +28,35 @@
   <line x1="139" y1="142" x2="379" y2="0" stroke="#ffffff" stroke-width="1"/>
     </g>
     <text x="368" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#E50914" text-anchor="end">N</text>
+    <rect width="400" height="600" fill="url(#vignette)"/>
     <rect width="400" height="600" fill="url(#fade)"/>
+  <circle cx="274" cy="596" r="1.32" fill="#ffffff" opacity="0.25"/>
+  <circle cx="124" cy="412" r="1.77" fill="#ffffff" opacity="0.25"/>
+  <circle cx="394" cy="239" r="1.23" fill="#ffffff" opacity="0.25"/>
+  <circle cx="241" cy="324" r="1.17" fill="#ffffff" opacity="0.25"/>
+  <circle cx="68" cy="534" r="1.07" fill="#ffffff" opacity="0.25"/>
+  <circle cx="11" cy="88" r="1.80" fill="#ffffff" opacity="0.25"/>
+  <circle cx="351" cy="280" r="1.02" fill="#ffffff" opacity="0.25"/>
+  <circle cx="15" cy="316" r="1.14" fill="#ffffff" opacity="0.25"/>
+  <circle cx="163" cy="524" r="1.75" fill="#ffffff" opacity="0.25"/>
+  <circle cx="293" cy="391" r="1.44" fill="#ffffff" opacity="0.25"/>
+  <circle cx="105" cy="582" r="1.15" fill="#ffffff" opacity="0.25"/>
+  <circle cx="180" cy="369" r="1.98" fill="#ffffff" opacity="0.25"/>
+  <circle cx="155" cy="460" r="1.94" fill="#ffffff" opacity="0.25"/>
+  <circle cx="111" cy="151" r="1.17" fill="#ffffff" opacity="0.25"/>
+  <circle cx="138" cy="128" r="1.17" fill="#ffffff" opacity="0.25"/>
+  <circle cx="253" cy="556" r="1.50" fill="#ffffff" opacity="0.25"/>
+  <circle cx="220" cy="386" r="1.22" fill="#ffffff" opacity="0.25"/>
+  <circle cx="378" cy="20" r="1.11" fill="#ffffff" opacity="0.25"/>
+  <circle cx="326" cy="512" r="1.91" fill="#ffffff" opacity="0.25"/>
+  <circle cx="318" cy="81" r="1.25" fill="#ffffff" opacity="0.25"/>
+  <circle cx="351" cy="409" r="1.34" fill="#ffffff" opacity="0.25"/>
+  <circle cx="4" cy="460" r="1.58" fill="#ffffff" opacity="0.25"/>
+  <circle cx="58" cy="491" r="1.92" fill="#ffffff" opacity="0.25"/>
+  <circle cx="144" cy="373" r="1.59" fill="#ffffff" opacity="0.25"/>
+  <circle cx="292" cy="216" r="1.83" fill="#ffffff" opacity="0.25"/>
     <rect x="26" y="510" width="36" height="4" fill="#E50914"/>
+  <text x="26" y="502" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.5" fill="rgba(255,255,255,0.75)">HORROR</text>
   <text x="29" y="559" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="rgba(0,0,0,0.55)">Crimson Static</text>
   <text x="26" y="556" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#ffffff">Crimson Static</text>
   </g>
