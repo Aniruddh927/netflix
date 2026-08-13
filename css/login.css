@@ -1,0 +1,178 @@
+/* ==========================================================================
+   Netflix UI clone (educational demo) — sign-in page styles
+   ========================================================================== */
+
+:root {
+  --red: #E50914;
+  --bg: #141414;
+  --text: #e5e5e5;
+  --muted: #737373;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle cinematic red glow behind the card */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(60% 45% at 50% 30%, rgba(229, 9, 20, 0.12), transparent 70%);
+  pointer-events: none;
+}
+
+/* --- Brand -------------------------------------------------------------- */
+.login__brand {
+  padding: 24px 4%;
+}
+
+.login__brand a {
+  color: var(--red);
+  font-size: 1.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+/* --- Card --------------------------------------------------------------- */
+.login__wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.login__card {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 6px;
+  padding: 40px 36px 32px;
+}
+
+.login__card h1 {
+  margin: 0 0 22px;
+  font-size: 1.75rem;
+}
+
+.login__card input {
+  width: 100%;
+  margin-bottom: 14px;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 4px;
+  background: #333;
+  color: #fff;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.login__card input::placeholder {
+  color: #8c8c8c;
+}
+
+.login__card input:focus {
+  outline: none;
+  background: #454545;
+  box-shadow: 0 0 0 1px #555;
+}
+
+.btn--red {
+  width: 100%;
+  margin-top: 10px;
+  padding: 13px;
+  border: none;
+  border-radius: 4px;
+  background: var(--red);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn--red:hover {
+  background: #f6121d;
+}
+
+.login__error {
+  min-height: 18px;
+  margin: 12px 0 0;
+  color: #e87c03;
+  font-size: 0.85rem;
+}
+
+/* --- Divider + Google button --------------------------------------------- */
+.login__or {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.login__or::before,
+.login__or::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #333;
+}
+
+.login__google {
+  display: flex;
+  justify-content: center;
+}
+
+.login__note {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.login__hint {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+/* --- Footer --------------------------------------------------------------- */
+.login__footer {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px 4% 28px;
+  text-align: center;
+  color: #6d6d6d;
+  font-size: 0.72rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 480px) {
+  .login__card {
+    padding: 28px 20px;
+  }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In — Netflix (Educational Demo)</title>
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+  <header class="login__brand">
+    <a href="login.html">NETFLIX</a>
+  </header>
+
+  <main class="login__wrap">
+    <div class="login__card">
+      <h1>Sign In</h1>
+      <form id="login-form" novalidate>
+        <input id="login-email" type="email" placeholder="Email or phone number" autocomplete="email" required>
+        <input id="login-password" type="password" placeholder="Password" autocomplete="current-password" required>
+        <button class="btn--red" type="submit">Sign In</button>
+        <p id="login-error" class="login__error" role="alert"></p>
+        <div class="login__or"><span>OR</span></div>
+        <!-- Google Identity Services renders the real button into this slot -->
+        <div id="google-btn" class="login__google"></div>
+      </form>
+      <p class="login__hint">Demo site: any email + password (min 4 characters) signs you in. Google sign-in is real once configured — nothing is stored beyond your browser.</p>
+    </div>
+  </main>
+
+  <footer class="login__footer">
+    This is an educational, fan-made demo of the Netflix UI. Not affiliated with, endorsed by, or connected to Netflix. All titles are fictional.
+  </footer>
+
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="js/config.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/login.js" defer></script>
+</body>
+</html>

@@ -238,6 +238,7 @@ body.scrolled #navbar::before {
 .navbar__avatar {
   width: 32px;
   height: 32px;
+  border: none;
   border-radius: var(--radius);
   background: linear-gradient(135deg, #b20710, #e50914 45%, #5a070c);
   color: #fff;
@@ -248,6 +249,58 @@ body.scrolled #navbar::before {
   justify-content: center;
   cursor: pointer;
   user-select: none;
+}
+
+/* Avatar images (Google profile photo) + account dropdown */
+.navbar__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.navbar__user {
+  position: relative;
+}
+
+.user-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  width: 190px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.92);
+  border: 1px solid #333;
+  border-radius: var(--radius);
+  z-index: var(--z-navbar);
+}
+
+.user-menu[hidden] {
+  display: none;
+}
+
+.user-menu span {
+  padding: 4px 8px;
+  color: var(--text);
+  font-size: 0.85rem;
+  border-bottom: 1px solid #333;
+}
+
+.user-menu button {
+  padding: 8px;
+  border: none;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text);
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.user-menu button:hover {
+  background: #333;
 }
 
 /* --------------------------------------------------------------------------
@@ -509,6 +562,15 @@ body.scrolled #navbar::before {
   padding: 10px;
 }
 
+/* Generated SVG poster art fills the card */
+.card__poster-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .card__poster > span,
 .card__poster > h3,
 .card__poster > p {
@@ -653,7 +715,15 @@ body.scrolled #navbar::before {
   padding: 24px;
   background-size: cover;
   background-position: center;
-  /* Background gradient set inline by JS */
+  /* Backdrop art image set by JS */
+}
+
+.modal__backdrop-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Fade the backdrop into the modal surface below */

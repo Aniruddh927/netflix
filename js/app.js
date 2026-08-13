@@ -119,9 +119,14 @@
      */
     function buildPoster(item) {
       const poster = el('div', 'card__poster');
+      // Gradient fallback behind the generated SVG artwork.
       const [g1, g2] = item.gradient;
       poster.style.background = `linear-gradient(135deg, ${g1}, ${g2})`;
-      poster.appendChild(el('span', 'card__poster-title', item.title));
+      const img = el('img', 'card__poster-img');
+      img.src = `images/poster/${item.id}.svg`;
+      img.alt = item.title;
+      img.loading = 'lazy';
+      poster.appendChild(img);
       return poster;
     }
 
@@ -277,9 +282,9 @@
 
         descEl.textContent = item.description;
 
-        // Deep-to-darker gradient from the item's palette.
+        // Backdrop art (generated SVG) over a gradient fallback.
         const [g1, g2] = item.gradient;
-        heroEl.style.background = `linear-gradient(180deg, ${g1}, ${g2})`;
+        heroEl.style.backgroundImage = `linear-gradient(180deg, ${g1}, ${g2}), url("images/backdrop/${item.id}.svg")`;
       }
 
       if (state.heroItems.length > 0) showItem(state.heroItems[0]);
@@ -303,10 +308,12 @@
       if (!item) return;
       state.modalOpen = true;
 
-      // Poster art: gradient backdrop with the big title over it.
+      // Backdrop art with the big title overlaid.
       const backdrop = el('div', 'modal__backdrop');
-      const [g1, g2] = item.gradient;
-      backdrop.style.background = `linear-gradient(135deg, ${g1}, ${g2})`;
+      const img = el('img', 'modal__backdrop-img');
+      img.src = `images/backdrop/${item.id}.svg`;
+      img.alt = '';
+      backdrop.appendChild(img);
       backdrop.appendChild(el('h1', 'modal__backdrop-title', item.title));
 
       const body = el('div', 'modal__body');

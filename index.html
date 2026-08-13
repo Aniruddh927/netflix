@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cloneflix — Stream Fictional Originals (Demo)</title>
+  <title>Netflix — Watch TV Shows & Movies Online (Educational Demo)</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
   <!-- Top navigation bar -->
   <header id="navbar">
     <div class="navbar__left">
-      <a class="navbar__logo" href="#">CLONEFLIX</a>
+      <a class="navbar__logo" href="#">NETFLIX</a>
       <ul class="navbar__links">
         <li><a href="#">Home</a></li>
         <li><a href="#">TV Shows</a></li>
@@ -24,7 +24,13 @@
         <input id="search-input" type="text" placeholder="Search titles, genres…" autocomplete="off">
         <button id="search-btn" type="submit">Search</button>
       </form>
-      <div class="navbar__avatar" aria-hidden="true">A</div>
+      <div class="navbar__user">
+        <button class="navbar__avatar" id="user-btn" aria-label="Account menu" aria-haspopup="true" aria-expanded="false">A</button>
+        <div class="user-menu" id="user-menu" hidden>
+          <span id="user-menu-name"></span>
+          <button id="user-signout" type="button">Sign out</button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -66,9 +72,11 @@
         <li><a href="#">Cookie Preferences</a></li>
       </ul>
     </div>
-    <p class="footer__disclaimer">Cloneflix is an educational demo of a streaming UI. Not affiliated with, endorsed by, or connected to Netflix. All titles are fictional.</p>
+    <p class="footer__disclaimer">This is an educational, fan-made demo of the Netflix UI. Not affiliated with, endorsed by, or connected to Netflix. All titles are fictional.</p>
   </footer>
 
+  <script src="js/config.js" defer></script>
+  <script src="js/auth.js" defer></script>
   <script src="js/data.js" defer></script>
   <script src="js/app.js" defer></script>
 </body>
