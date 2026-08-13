@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="Black Mirror poster">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101418"/><stop offset="0.5" stop-color="#1f2831"/><stop offset="1" stop-color="#2e3c4a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.72" cy="0.18" r="0.85">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/>
+    </radialGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.45" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.05 0"/>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g filter="url(#grain)">
+    <rect width="400" height="600" fill="url(#bg)"/>
+    <rect width="400" height="600" fill="url(#glow)"/>
+    <g opacity="0.16" stroke="#ffffff" fill="none">
+  <circle cx="249" cy="508" r="91" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="66" cy="364" r="116" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="361" cy="166" r="64" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="166" y1="111" x2="406" y2="0" stroke="#ffffff" stroke-width="1"/>
+    </g>
+    <text x="368" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#E50914" text-anchor="end">N</text>
+    <rect width="400" height="600" fill="url(#vignette)"/>
+    <rect width="400" height="600" fill="url(#fade)"/>
+  <circle cx="240" cy="411" r="1.59" fill="#ffffff" opacity="0.25"/>
+  <circle cx="35" cy="70" r="1.31" fill="#ffffff" opacity="0.25"/>
+  <circle cx="78" cy="0" r="1.67" fill="#ffffff" opacity="0.25"/>
+  <circle cx="393" cy="587" r="1.07" fill="#ffffff" opacity="0.25"/>
+  <circle cx="0" cy="370" r="1.49" fill="#ffffff" opacity="0.25"/>
+  <circle cx="211" cy="392" r="1.45" fill="#ffffff" opacity="0.25"/>
+  <circle cx="139" cy="366" r="1.43" fill="#ffffff" opacity="0.25"/>
+  <circle cx="294" cy="156" r="1.60" fill="#ffffff" opacity="0.25"/>
+  <circle cx="182" cy="470" r="1.20" fill="#ffffff" opacity="0.25"/>
+  <circle cx="164" cy="178" r="1.61" fill="#ffffff" opacity="0.25"/>
+  <circle cx="274" cy="156" r="1.43" fill="#ffffff" opacity="0.25"/>
+  <circle cx="389" cy="227" r="1.42" fill="#ffffff" opacity="0.25"/>
+  <circle cx="40" cy="403" r="1.43" fill="#ffffff" opacity="0.25"/>
+  <circle cx="89" cy="212" r="1.54" fill="#ffffff" opacity="0.25"/>
+  <circle cx="45" cy="134" r="1.58" fill="#ffffff" opacity="0.25"/>
+  <circle cx="199" cy="14" r="1.89" fill="#ffffff" opacity="0.25"/>
+  <circle cx="366" cy="267" r="1.12" fill="#ffffff" opacity="0.25"/>
+  <circle cx="84" cy="59" r="1.60" fill="#ffffff" opacity="0.25"/>
+  <circle cx="47" cy="453" r="1.88" fill="#ffffff" opacity="0.25"/>
+  <circle cx="247" cy="332" r="1.71" fill="#ffffff" opacity="0.25"/>
+  <circle cx="400" cy="423" r="2.00" fill="#ffffff" opacity="0.25"/>
+  <circle cx="379" cy="298" r="1.30" fill="#ffffff" opacity="0.25"/>
+  <circle cx="242" cy="599" r="1.86" fill="#ffffff" opacity="0.25"/>
+  <circle cx="140" cy="322" r="1.71" fill="#ffffff" opacity="0.25"/>
+  <circle cx="315" cy="64" r="1.50" fill="#ffffff" opacity="0.25"/>
+    <rect x="26" y="510" width="36" height="4" fill="#E50914"/>
+  <text x="26" y="502" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.5" fill="rgba(255,255,255,0.75)">SCI-FI</text>
+  <text x="29" y="559" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="rgba(0,0,0,0.55)">Black Mirror</text>
+  <text x="26" y="556" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#ffffff">Black Mirror</text>
+  </g>
+</svg>

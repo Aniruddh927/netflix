@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="The Office backdrop">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2c3e50"/><stop offset="0.5" stop-color="#3c7080"/><stop offset="1" stop-color="#4ca1af"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.72" cy="0.18" r="0.85">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/>
+    </radialGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.45" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.05 0"/>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g filter="url(#grain)">
+    <rect width="800" height="450" fill="url(#bg)"/>
+    <rect width="800" height="450" fill="url(#glow)"/>
+    <g opacity="0.16" stroke="#ffffff" fill="none">
+  <circle cx="270" cy="312" r="100" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="406" cy="23" r="76" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="489" cy="2" r="46" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="40" y1="230" x2="520" y2="0" stroke="#ffffff" stroke-width="1"/>
+    </g>
+    <text x="752" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#E50914" text-anchor="end">N</text>
+    <rect width="800" height="450" fill="url(#vignette)"/>
+    <rect width="800" height="450" fill="url(#fade)"/>
+  <circle cx="418" cy="131" r="1.63" fill="#ffffff" opacity="0.25"/>
+  <circle cx="586" cy="305" r="1.40" fill="#ffffff" opacity="0.25"/>
+  <circle cx="769" cy="354" r="1.92" fill="#ffffff" opacity="0.25"/>
+  <circle cx="631" cy="449" r="1.13" fill="#ffffff" opacity="0.25"/>
+  <circle cx="141" cy="386" r="1.65" fill="#ffffff" opacity="0.25"/>
+  <circle cx="612" cy="171" r="1.68" fill="#ffffff" opacity="0.25"/>
+  <circle cx="459" cy="24" r="1.60" fill="#ffffff" opacity="0.25"/>
+  <circle cx="305" cy="197" r="1.42" fill="#ffffff" opacity="0.25"/>
+  <circle cx="43" cy="178" r="1.82" fill="#ffffff" opacity="0.25"/>
+  <circle cx="348" cy="406" r="1.35" fill="#ffffff" opacity="0.25"/>
+  <circle cx="378" cy="165" r="1.93" fill="#ffffff" opacity="0.25"/>
+  <circle cx="90" cy="212" r="1.80" fill="#ffffff" opacity="0.25"/>
+  <circle cx="314" cy="385" r="1.84" fill="#ffffff" opacity="0.25"/>
+  <circle cx="738" cy="214" r="1.32" fill="#ffffff" opacity="0.25"/>
+  <circle cx="708" cy="205" r="1.08" fill="#ffffff" opacity="0.25"/>
+  <circle cx="431" cy="269" r="1.01" fill="#ffffff" opacity="0.25"/>
+  <circle cx="153" cy="327" r="1.77" fill="#ffffff" opacity="0.25"/>
+  <circle cx="83" cy="382" r="1.97" fill="#ffffff" opacity="0.25"/>
+  <circle cx="778" cy="241" r="1.79" fill="#ffffff" opacity="0.25"/>
+  <circle cx="680" cy="117" r="1.47" fill="#ffffff" opacity="0.25"/>
+  <circle cx="533" cy="78" r="1.69" fill="#ffffff" opacity="0.25"/>
+  <circle cx="631" cy="363" r="1.27" fill="#ffffff" opacity="0.25"/>
+  <circle cx="112" cy="442" r="1.56" fill="#ffffff" opacity="0.25"/>
+  <circle cx="503" cy="106" r="1.25" fill="#ffffff" opacity="0.25"/>
+  <circle cx="203" cy="301" r="1.60" fill="#ffffff" opacity="0.25"/>
+    <rect x="48" y="316" width="44" height="5" fill="#E50914"/>
+  <text x="48" y="306" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.5" fill="rgba(255,255,255,0.75)">COMEDY</text>
+  <text x="51" y="391" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="rgba(0,0,0,0.55)">The Office</text>
+  <text x="48" y="388" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="#ffffff">The Office</text>
+  </g>
+</svg>

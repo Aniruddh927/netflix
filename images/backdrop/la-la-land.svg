@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="La La Land backdrop">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2b1a4a"/><stop offset="0.5" stop-color="#80326b"/><stop offset="1" stop-color="#d44a8c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.72" cy="0.18" r="0.85">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/>
+    </radialGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.45" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.05 0"/>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g filter="url(#grain)">
+    <rect width="800" height="450" fill="url(#bg)"/>
+    <rect width="800" height="450" fill="url(#glow)"/>
+    <g opacity="0.16" stroke="#ffffff" fill="none">
+  <circle cx="17" cy="136" r="172" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="751" cy="207" r="173" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="267" cy="232" r="85" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="165" y1="335" x2="645" y2="0" stroke="#ffffff" stroke-width="1"/>
+    </g>
+    <text x="752" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#E50914" text-anchor="end">N</text>
+    <rect width="800" height="450" fill="url(#vignette)"/>
+    <rect width="800" height="450" fill="url(#fade)"/>
+  <circle cx="44" cy="161" r="1.49" fill="#ffffff" opacity="0.25"/>
+  <circle cx="188" cy="307" r="1.26" fill="#ffffff" opacity="0.25"/>
+  <circle cx="300" cy="151" r="1.28" fill="#ffffff" opacity="0.25"/>
+  <circle cx="137" cy="278" r="1.46" fill="#ffffff" opacity="0.25"/>
+  <circle cx="506" cy="439" r="1.36" fill="#ffffff" opacity="0.25"/>
+  <circle cx="602" cy="125" r="1.92" fill="#ffffff" opacity="0.25"/>
+  <circle cx="691" cy="153" r="1.10" fill="#ffffff" opacity="0.25"/>
+  <circle cx="71" cy="213" r="1.45" fill="#ffffff" opacity="0.25"/>
+  <circle cx="359" cy="379" r="1.58" fill="#ffffff" opacity="0.25"/>
+  <circle cx="164" cy="123" r="1.82" fill="#ffffff" opacity="0.25"/>
+  <circle cx="505" cy="430" r="1.41" fill="#ffffff" opacity="0.25"/>
+  <circle cx="153" cy="184" r="1.04" fill="#ffffff" opacity="0.25"/>
+  <circle cx="318" cy="77" r="1.01" fill="#ffffff" opacity="0.25"/>
+  <circle cx="452" cy="265" r="1.21" fill="#ffffff" opacity="0.25"/>
+  <circle cx="96" cy="206" r="1.59" fill="#ffffff" opacity="0.25"/>
+  <circle cx="641" cy="388" r="1.56" fill="#ffffff" opacity="0.25"/>
+  <circle cx="592" cy="105" r="1.69" fill="#ffffff" opacity="0.25"/>
+  <circle cx="648" cy="326" r="1.08" fill="#ffffff" opacity="0.25"/>
+  <circle cx="414" cy="307" r="1.12" fill="#ffffff" opacity="0.25"/>
+  <circle cx="709" cy="210" r="1.29" fill="#ffffff" opacity="0.25"/>
+  <circle cx="65" cy="16" r="1.02" fill="#ffffff" opacity="0.25"/>
+  <circle cx="700" cy="279" r="1.14" fill="#ffffff" opacity="0.25"/>
+  <circle cx="597" cy="306" r="1.20" fill="#ffffff" opacity="0.25"/>
+  <circle cx="12" cy="98" r="1.95" fill="#ffffff" opacity="0.25"/>
+  <circle cx="66" cy="103" r="1.73" fill="#ffffff" opacity="0.25"/>
+    <rect x="48" y="316" width="44" height="5" fill="#E50914"/>
+  <text x="48" y="306" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.5" fill="rgba(255,255,255,0.75)">DRAMA</text>
+  <text x="51" y="391" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="rgba(0,0,0,0.55)">La La Land</text>
+  <text x="48" y="388" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="#ffffff">La La Land</text>
+  </g>
+</svg>

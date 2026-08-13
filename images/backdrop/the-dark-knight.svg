@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="The Dark Knight backdrop">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1622"/><stop offset="0.5" stop-color="#1d3857"/><stop offset="1" stop-color="#2e5a8c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.72" cy="0.18" r="0.85">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/>
+    </radialGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.45" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.05 0"/>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g filter="url(#grain)">
+    <rect width="800" height="450" fill="url(#bg)"/>
+    <rect width="800" height="450" fill="url(#glow)"/>
+    <g opacity="0.16" stroke="#ffffff" fill="none">
+  <circle cx="537" cy="388" r="42" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="135" cy="170" r="132" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="730" cy="238" r="49" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="113" y1="62" x2="593" y2="0" stroke="#ffffff" stroke-width="1"/>
+    </g>
+    <text x="752" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#E50914" text-anchor="end">N</text>
+    <rect width="800" height="450" fill="url(#vignette)"/>
+    <rect width="800" height="450" fill="url(#fade)"/>
+  <circle cx="239" cy="211" r="1.56" fill="#ffffff" opacity="0.25"/>
+  <circle cx="210" cy="377" r="1.25" fill="#ffffff" opacity="0.25"/>
+  <circle cx="786" cy="447" r="1.12" fill="#ffffff" opacity="0.25"/>
+  <circle cx="241" cy="391" r="1.14" fill="#ffffff" opacity="0.25"/>
+  <circle cx="423" cy="293" r="1.41" fill="#ffffff" opacity="0.25"/>
+  <circle cx="206" cy="1" r="1.26" fill="#ffffff" opacity="0.25"/>
+  <circle cx="580" cy="190" r="1.75" fill="#ffffff" opacity="0.25"/>
+  <circle cx="492" cy="46" r="1.23" fill="#ffffff" opacity="0.25"/>
+  <circle cx="559" cy="171" r="1.38" fill="#ffffff" opacity="0.25"/>
+  <circle cx="73" cy="361" r="1.04" fill="#ffffff" opacity="0.25"/>
+  <circle cx="56" cy="113" r="1.57" fill="#ffffff" opacity="0.25"/>
+  <circle cx="538" cy="86" r="1.36" fill="#ffffff" opacity="0.25"/>
+  <circle cx="320" cy="100" r="1.92" fill="#ffffff" opacity="0.25"/>
+  <circle cx="385" cy="302" r="1.54" fill="#ffffff" opacity="0.25"/>
+  <circle cx="204" cy="339" r="1.47" fill="#ffffff" opacity="0.25"/>
+  <circle cx="258" cy="221" r="1.80" fill="#ffffff" opacity="0.25"/>
+  <circle cx="346" cy="125" r="1.10" fill="#ffffff" opacity="0.25"/>
+  <circle cx="530" cy="198" r="1.83" fill="#ffffff" opacity="0.25"/>
+  <circle cx="358" cy="217" r="1.91" fill="#ffffff" opacity="0.25"/>
+  <circle cx="745" cy="379" r="1.03" fill="#ffffff" opacity="0.25"/>
+  <circle cx="567" cy="83" r="1.47" fill="#ffffff" opacity="0.25"/>
+  <circle cx="487" cy="389" r="1.83" fill="#ffffff" opacity="0.25"/>
+  <circle cx="642" cy="20" r="1.94" fill="#ffffff" opacity="0.25"/>
+  <circle cx="648" cy="87" r="1.73" fill="#ffffff" opacity="0.25"/>
+  <circle cx="370" cy="206" r="1.86" fill="#ffffff" opacity="0.25"/>
+    <rect x="48" y="316" width="44" height="5" fill="#E50914"/>
+  <text x="48" y="306" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.5" fill="rgba(255,255,255,0.75)">ACTION</text>
+  <text x="51" y="391" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="rgba(0,0,0,0.55)">The Dark Knight</text>
+  <text x="48" y="388" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="#ffffff">The Dark Knight</text>
+  </g>
+</svg>

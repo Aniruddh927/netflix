@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="The Crown backdrop">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b2a4a"/><stop offset="0.5" stop-color="#544c35"/><stop offset="1" stop-color="#8c6d1f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.72" cy="0.18" r="0.85">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/>
+    </radialGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.45" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.05 0"/>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g filter="url(#grain)">
+    <rect width="800" height="450" fill="url(#bg)"/>
+    <rect width="800" height="450" fill="url(#glow)"/>
+    <g opacity="0.16" stroke="#ffffff" fill="none">
+  <circle cx="9" cy="266" r="197" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="519" cy="251" r="148" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="151" cy="418" r="83" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="99" y1="434" x2="579" y2="74" stroke="#ffffff" stroke-width="1"/>
+    </g>
+    <text x="752" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#E50914" text-anchor="end">N</text>
+    <rect width="800" height="450" fill="url(#vignette)"/>
+    <rect width="800" height="450" fill="url(#fade)"/>
+  <circle cx="759" cy="408" r="1.23" fill="#ffffff" opacity="0.25"/>
+  <circle cx="525" cy="264" r="1.93" fill="#ffffff" opacity="0.25"/>
+  <circle cx="607" cy="73" r="1.48" fill="#ffffff" opacity="0.25"/>
+  <circle cx="368" cy="330" r="1.69" fill="#ffffff" opacity="0.25"/>
+  <circle cx="521" cy="423" r="1.59" fill="#ffffff" opacity="0.25"/>
+  <circle cx="484" cy="170" r="1.23" fill="#ffffff" opacity="0.25"/>
+  <circle cx="387" cy="256" r="1.19" fill="#ffffff" opacity="0.25"/>
+  <circle cx="184" cy="52" r="1.21" fill="#ffffff" opacity="0.25"/>
+  <circle cx="128" cy="28" r="1.50" fill="#ffffff" opacity="0.25"/>
+  <circle cx="647" cy="404" r="1.68" fill="#ffffff" opacity="0.25"/>
+  <circle cx="464" cy="313" r="1.43" fill="#ffffff" opacity="0.25"/>
+  <circle cx="739" cy="388" r="1.93" fill="#ffffff" opacity="0.25"/>
+  <circle cx="65" cy="273" r="1.86" fill="#ffffff" opacity="0.25"/>
+  <circle cx="711" cy="310" r="1.06" fill="#ffffff" opacity="0.25"/>
+  <circle cx="42" cy="61" r="1.69" fill="#ffffff" opacity="0.25"/>
+  <circle cx="720" cy="75" r="1.94" fill="#ffffff" opacity="0.25"/>
+  <circle cx="755" cy="192" r="1.16" fill="#ffffff" opacity="0.25"/>
+  <circle cx="411" cy="0" r="1.83" fill="#ffffff" opacity="0.25"/>
+  <circle cx="325" cy="381" r="1.89" fill="#ffffff" opacity="0.25"/>
+  <circle cx="762" cy="328" r="1.65" fill="#ffffff" opacity="0.25"/>
+  <circle cx="407" cy="361" r="1.44" fill="#ffffff" opacity="0.25"/>
+  <circle cx="11" cy="446" r="1.30" fill="#ffffff" opacity="0.25"/>
+  <circle cx="566" cy="401" r="1.73" fill="#ffffff" opacity="0.25"/>
+  <circle cx="202" cy="1" r="1.10" fill="#ffffff" opacity="0.25"/>
+  <circle cx="740" cy="355" r="1.26" fill="#ffffff" opacity="0.25"/>
+    <rect x="48" y="316" width="44" height="5" fill="#E50914"/>
+  <text x="48" y="306" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.5" fill="rgba(255,255,255,0.75)">DRAMA</text>
+  <text x="51" y="391" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="rgba(0,0,0,0.55)">The Crown</text>
+  <text x="48" y="388" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="#ffffff">The Crown</text>
+  </g>
+</svg>

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Dune: Part Two backdrop">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b2a14"/><stop offset="0.5" stop-color="#805a29"/><stop offset="1" stop-color="#c48a3d"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.72" cy="0.18" r="0.85">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/>
+    </radialGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.45" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.05 0"/>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g filter="url(#grain)">
+    <rect width="800" height="450" fill="url(#bg)"/>
+    <rect width="800" height="450" fill="url(#glow)"/>
+    <g opacity="0.16" stroke="#ffffff" fill="none">
+  <circle cx="71" cy="69" r="77" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="502" cy="183" r="130" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="83" cy="225" r="55" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="304" y1="109" x2="784" y2="0" stroke="#ffffff" stroke-width="1"/>
+    </g>
+    <text x="752" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#E50914" text-anchor="end">N</text>
+    <rect width="800" height="450" fill="url(#vignette)"/>
+    <rect width="800" height="450" fill="url(#fade)"/>
+  <circle cx="159" cy="317" r="1.90" fill="#ffffff" opacity="0.25"/>
+  <circle cx="593" cy="412" r="1.06" fill="#ffffff" opacity="0.25"/>
+  <circle cx="154" cy="309" r="1.91" fill="#ffffff" opacity="0.25"/>
+  <circle cx="786" cy="242" r="1.06" fill="#ffffff" opacity="0.25"/>
+  <circle cx="542" cy="66" r="1.90" fill="#ffffff" opacity="0.25"/>
+  <circle cx="725" cy="131" r="1.19" fill="#ffffff" opacity="0.25"/>
+  <circle cx="566" cy="332" r="1.94" fill="#ffffff" opacity="0.25"/>
+  <circle cx="27" cy="428" r="1.49" fill="#ffffff" opacity="0.25"/>
+  <circle cx="762" cy="424" r="1.90" fill="#ffffff" opacity="0.25"/>
+  <circle cx="274" cy="49" r="1.78" fill="#ffffff" opacity="0.25"/>
+  <circle cx="285" cy="2" r="1.09" fill="#ffffff" opacity="0.25"/>
+  <circle cx="742" cy="155" r="1.78" fill="#ffffff" opacity="0.25"/>
+  <circle cx="400" cy="198" r="1.80" fill="#ffffff" opacity="0.25"/>
+  <circle cx="779" cy="189" r="1.42" fill="#ffffff" opacity="0.25"/>
+  <circle cx="780" cy="358" r="1.45" fill="#ffffff" opacity="0.25"/>
+  <circle cx="78" cy="327" r="1.60" fill="#ffffff" opacity="0.25"/>
+  <circle cx="31" cy="162" r="1.94" fill="#ffffff" opacity="0.25"/>
+  <circle cx="638" cy="53" r="1.61" fill="#ffffff" opacity="0.25"/>
+  <circle cx="337" cy="95" r="1.87" fill="#ffffff" opacity="0.25"/>
+  <circle cx="738" cy="213" r="1.59" fill="#ffffff" opacity="0.25"/>
+  <circle cx="55" cy="123" r="1.92" fill="#ffffff" opacity="0.25"/>
+  <circle cx="236" cy="437" r="1.11" fill="#ffffff" opacity="0.25"/>
+  <circle cx="403" cy="251" r="1.11" fill="#ffffff" opacity="0.25"/>
+  <circle cx="176" cy="152" r="1.23" fill="#ffffff" opacity="0.25"/>
+  <circle cx="537" cy="367" r="1.84" fill="#ffffff" opacity="0.25"/>
+    <rect x="48" y="316" width="44" height="5" fill="#E50914"/>
+  <text x="48" y="306" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.5" fill="rgba(255,255,255,0.75)">SCI-FI</text>
+  <text x="51" y="391" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="rgba(0,0,0,0.55)">Dune: Part Two</text>
+  <text x="48" y="388" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="#ffffff">Dune: Part Two</text>
+  </g>
+</svg>

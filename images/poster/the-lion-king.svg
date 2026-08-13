@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="The Lion King poster">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b1f0b"/><stop offset="0.5" stop-color="#885d1b"/><stop offset="1" stop-color="#d49a2b"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.72" cy="0.18" r="0.85">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/>
+    </radialGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.45" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.05 0"/>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g filter="url(#grain)">
+    <rect width="400" height="600" fill="url(#bg)"/>
+    <rect width="400" height="600" fill="url(#glow)"/>
+    <g opacity="0.16" stroke="#ffffff" fill="none">
+  <circle cx="38" cy="411" r="103" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="282" cy="44" r="177" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="100" cy="15" r="61" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="174" y1="325" x2="414" y2="0" stroke="#ffffff" stroke-width="1"/>
+    </g>
+    <text x="368" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#E50914" text-anchor="end">N</text>
+    <rect width="400" height="600" fill="url(#vignette)"/>
+    <rect width="400" height="600" fill="url(#fade)"/>
+  <circle cx="216" cy="162" r="1.88" fill="#ffffff" opacity="0.25"/>
+  <circle cx="290" cy="307" r="1.73" fill="#ffffff" opacity="0.25"/>
+  <circle cx="332" cy="77" r="1.10" fill="#ffffff" opacity="0.25"/>
+  <circle cx="5" cy="239" r="1.12" fill="#ffffff" opacity="0.25"/>
+  <circle cx="36" cy="325" r="1.40" fill="#ffffff" opacity="0.25"/>
+  <circle cx="339" cy="344" r="1.90" fill="#ffffff" opacity="0.25"/>
+  <circle cx="56" cy="211" r="1.14" fill="#ffffff" opacity="0.25"/>
+  <circle cx="136" cy="356" r="1.15" fill="#ffffff" opacity="0.25"/>
+  <circle cx="191" cy="426" r="1.83" fill="#ffffff" opacity="0.25"/>
+  <circle cx="337" cy="127" r="1.32" fill="#ffffff" opacity="0.25"/>
+  <circle cx="93" cy="133" r="1.05" fill="#ffffff" opacity="0.25"/>
+  <circle cx="108" cy="495" r="1.79" fill="#ffffff" opacity="0.25"/>
+  <circle cx="37" cy="450" r="1.35" fill="#ffffff" opacity="0.25"/>
+  <circle cx="67" cy="330" r="1.01" fill="#ffffff" opacity="0.25"/>
+  <circle cx="236" cy="92" r="1.40" fill="#ffffff" opacity="0.25"/>
+  <circle cx="324" cy="93" r="1.73" fill="#ffffff" opacity="0.25"/>
+  <circle cx="256" cy="582" r="1.44" fill="#ffffff" opacity="0.25"/>
+  <circle cx="277" cy="46" r="1.41" fill="#ffffff" opacity="0.25"/>
+  <circle cx="333" cy="538" r="1.74" fill="#ffffff" opacity="0.25"/>
+  <circle cx="19" cy="317" r="1.28" fill="#ffffff" opacity="0.25"/>
+  <circle cx="106" cy="228" r="1.71" fill="#ffffff" opacity="0.25"/>
+  <circle cx="62" cy="565" r="1.84" fill="#ffffff" opacity="0.25"/>
+  <circle cx="65" cy="338" r="1.84" fill="#ffffff" opacity="0.25"/>
+  <circle cx="324" cy="454" r="1.26" fill="#ffffff" opacity="0.25"/>
+  <circle cx="126" cy="97" r="1.89" fill="#ffffff" opacity="0.25"/>
+    <rect x="26" y="510" width="36" height="4" fill="#E50914"/>
+  <text x="26" y="502" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.5" fill="rgba(255,255,255,0.75)">ANIMATION</text>
+  <text x="29" y="559" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="rgba(0,0,0,0.55)">The Lion King</text>
+  <text x="26" y="556" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#ffffff">The Lion King</text>
+  </g>
+</svg>

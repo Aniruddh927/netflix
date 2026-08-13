@@ -1,6 +1,6 @@
 # Netflix UI Clone — educational demo
 
-A pure HTML/CSS/JavaScript recreation of the Netflix browsing experience, built as a front-end learning exercise: dark themed browsing page with hero banner, genre rows (including "New & Popular"), hover cards, a working **My List / favourites** system, a detail modal with a demo trailer player, live search, a sign-in page with an activity log, and **real "Sign in with Google"** support. Every title on the site is fictional and no video is streamed — poster/backdrop artwork is procedurally generated SVG, so there is no copyrighted imagery and no external assets (other than Google's official Sign-In script).
+A pure HTML/CSS/JavaScript recreation of the Netflix browsing experience, built as a front-end learning exercise: dark themed browsing page with hero banner, genre rows (including "New & Popular"), hover cards, a working **My List / favourites** system, a detail modal with a demo trailer player, live search, a "Who's watching?" profiles page, a sign-in page with an activity log, and **real "Sign in with Google"** support. The catalog uses real, well-known movie and series titles (titles are not copyrightable) with original descriptions, but no video is streamed and no copyrighted poster images are used — all poster/backdrop/thumbnail artwork is procedurally generated SVG, so there is no copyrighted imagery and no external assets (other than Google's official Sign-In script).
 
 Built with no frameworks, no build tools, and no external libraries or fonts.
 
@@ -55,4 +55,4 @@ Reads `js/data.js` and regenerates `images/poster/*.svg` and `images/backdrop/*.
 
 ## Disclaimer
 
-This is an educational, fan-made demo of the Netflix UI. Not affiliated with, endorsed by, or connected to Netflix. All titles are fictional.
+This is an educational, fan-made demo of the Netflix UI. Not affiliated with, endorsed by, or connected to Netflix. Movie and series titles are used for educational demonstration only; all artwork is original.

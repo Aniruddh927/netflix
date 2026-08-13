@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Spider-Man: Into the Spider-Verse backdrop">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b0b1a"/><stop offset="0.5" stop-color="#8e1b3b"/><stop offset="1" stop-color="#e02b5c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.72" cy="0.18" r="0.85">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/>
+    </radialGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.45" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.05 0"/>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g filter="url(#grain)">
+    <rect width="800" height="450" fill="url(#bg)"/>
+    <rect width="800" height="450" fill="url(#glow)"/>
+    <g opacity="0.16" stroke="#ffffff" fill="none">
+  <circle cx="762" cy="389" r="48" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="192" cy="229" r="45" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="195" cy="211" r="44" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="183" y1="375" x2="663" y2="15" stroke="#ffffff" stroke-width="1"/>
+    </g>
+    <text x="752" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#E50914" text-anchor="end">N</text>
+    <rect width="800" height="450" fill="url(#vignette)"/>
+    <rect width="800" height="450" fill="url(#fade)"/>
+  <circle cx="255" cy="210" r="1.10" fill="#ffffff" opacity="0.25"/>
+  <circle cx="427" cy="135" r="1.60" fill="#ffffff" opacity="0.25"/>
+  <circle cx="119" cy="173" r="1.73" fill="#ffffff" opacity="0.25"/>
+  <circle cx="388" cy="63" r="1.22" fill="#ffffff" opacity="0.25"/>
+  <circle cx="716" cy="329" r="1.92" fill="#ffffff" opacity="0.25"/>
+  <circle cx="5" cy="23" r="1.59" fill="#ffffff" opacity="0.25"/>
+  <circle cx="388" cy="52" r="1.49" fill="#ffffff" opacity="0.25"/>
+  <circle cx="301" cy="265" r="1.15" fill="#ffffff" opacity="0.25"/>
+  <circle cx="373" cy="338" r="1.16" fill="#ffffff" opacity="0.25"/>
+  <circle cx="721" cy="450" r="1.42" fill="#ffffff" opacity="0.25"/>
+  <circle cx="439" cy="154" r="1.00" fill="#ffffff" opacity="0.25"/>
+  <circle cx="0" cy="244" r="1.67" fill="#ffffff" opacity="0.25"/>
+  <circle cx="401" cy="280" r="1.63" fill="#ffffff" opacity="0.25"/>
+  <circle cx="361" cy="420" r="1.29" fill="#ffffff" opacity="0.25"/>
+  <circle cx="51" cy="275" r="1.08" fill="#ffffff" opacity="0.25"/>
+  <circle cx="534" cy="142" r="1.89" fill="#ffffff" opacity="0.25"/>
+  <circle cx="733" cy="74" r="1.17" fill="#ffffff" opacity="0.25"/>
+  <circle cx="332" cy="327" r="1.30" fill="#ffffff" opacity="0.25"/>
+  <circle cx="582" cy="128" r="1.61" fill="#ffffff" opacity="0.25"/>
+  <circle cx="680" cy="380" r="1.24" fill="#ffffff" opacity="0.25"/>
+  <circle cx="77" cy="187" r="1.88" fill="#ffffff" opacity="0.25"/>
+  <circle cx="426" cy="225" r="1.04" fill="#ffffff" opacity="0.25"/>
+  <circle cx="244" cy="18" r="1.17" fill="#ffffff" opacity="0.25"/>
+  <circle cx="201" cy="374" r="1.49" fill="#ffffff" opacity="0.25"/>
+  <circle cx="72" cy="12" r="1.05" fill="#ffffff" opacity="0.25"/>
+    <rect x="48" y="252" width="44" height="5" fill="#E50914"/>
+  <text x="48" y="242" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.5" fill="rgba(255,255,255,0.75)">ANIMATION</text>
+  <text x="51" y="327" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="rgba(0,0,0,0.55)">Spider-Man: Into the</text>
+  <text x="48" y="324" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="#ffffff">Spider-Man: Into the</text>
+  <text x="51" y="391" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="rgba(0,0,0,0.55)">Spider-Verse</text>
+  <text x="48" y="388" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="#ffffff">Spider-Verse</text>
+  </g>
+</svg>

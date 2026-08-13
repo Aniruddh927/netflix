@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Harry Potter and the Sorcerer's Stone backdrop">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a1a3b"/><stop offset="0.5" stop-color="#432b64"/><stop offset="1" stop-color="#6b3b8c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.72" cy="0.18" r="0.85">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/>
+    </radialGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.45" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.05 0"/>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g filter="url(#grain)">
+    <rect width="800" height="450" fill="url(#bg)"/>
+    <rect width="800" height="450" fill="url(#glow)"/>
+    <g opacity="0.16" stroke="#ffffff" fill="none">
+  <circle cx="664" cy="389" r="177" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="602" cy="190" r="46" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="374" cy="179" r="161" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="336" y1="402" x2="816" y2="42" stroke="#ffffff" stroke-width="1"/>
+    </g>
+    <text x="752" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#E50914" text-anchor="end">N</text>
+    <rect width="800" height="450" fill="url(#vignette)"/>
+    <rect width="800" height="450" fill="url(#fade)"/>
+  <circle cx="539" cy="263" r="1.83" fill="#ffffff" opacity="0.25"/>
+  <circle cx="775" cy="118" r="1.36" fill="#ffffff" opacity="0.25"/>
+  <circle cx="510" cy="28" r="1.42" fill="#ffffff" opacity="0.25"/>
+  <circle cx="513" cy="345" r="1.77" fill="#ffffff" opacity="0.25"/>
+  <circle cx="637" cy="256" r="1.16" fill="#ffffff" opacity="0.25"/>
+  <circle cx="155" cy="252" r="1.60" fill="#ffffff" opacity="0.25"/>
+  <circle cx="560" cy="26" r="1.41" fill="#ffffff" opacity="0.25"/>
+  <circle cx="213" cy="89" r="1.92" fill="#ffffff" opacity="0.25"/>
+  <circle cx="252" cy="341" r="1.42" fill="#ffffff" opacity="0.25"/>
+  <circle cx="255" cy="212" r="1.55" fill="#ffffff" opacity="0.25"/>
+  <circle cx="637" cy="282" r="1.91" fill="#ffffff" opacity="0.25"/>
+  <circle cx="646" cy="356" r="1.56" fill="#ffffff" opacity="0.25"/>
+  <circle cx="173" cy="232" r="1.44" fill="#ffffff" opacity="0.25"/>
+  <circle cx="531" cy="40" r="1.46" fill="#ffffff" opacity="0.25"/>
+  <circle cx="696" cy="209" r="1.17" fill="#ffffff" opacity="0.25"/>
+  <circle cx="405" cy="300" r="1.45" fill="#ffffff" opacity="0.25"/>
+  <circle cx="393" cy="440" r="1.67" fill="#ffffff" opacity="0.25"/>
+  <circle cx="1" cy="204" r="1.60" fill="#ffffff" opacity="0.25"/>
+  <circle cx="334" cy="5" r="1.68" fill="#ffffff" opacity="0.25"/>
+  <circle cx="735" cy="45" r="1.85" fill="#ffffff" opacity="0.25"/>
+  <circle cx="472" cy="35" r="1.70" fill="#ffffff" opacity="0.25"/>
+  <circle cx="794" cy="268" r="1.06" fill="#ffffff" opacity="0.25"/>
+  <circle cx="486" cy="403" r="1.73" fill="#ffffff" opacity="0.25"/>
+  <circle cx="129" cy="195" r="1.25" fill="#ffffff" opacity="0.25"/>
+  <circle cx="697" cy="62" r="1.84" fill="#ffffff" opacity="0.25"/>
+    <rect x="48" y="252" width="44" height="5" fill="#E50914"/>
+  <text x="48" y="242" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.5" fill="rgba(255,255,255,0.75)">FANTASY</text>
+  <text x="51" y="327" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="rgba(0,0,0,0.55)">Harry Potter and the</text>
+  <text x="48" y="324" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="#ffffff">Harry Potter and the</text>
+  <text x="51" y="391" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="rgba(0,0,0,0.55)">Sorcerer's Stone</text>
+  <text x="48" y="388" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="#ffffff">Sorcerer's Stone</text>
+  </g>
+</svg>

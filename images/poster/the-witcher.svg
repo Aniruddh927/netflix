@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="The Witcher poster">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2b2b2b"/><stop offset="0.5" stop-color="#535b5b"/><stop offset="1" stop-color="#7a8b8b"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.72" cy="0.18" r="0.85">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/>
+    </radialGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.45" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.05 0"/>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g filter="url(#grain)">
+    <rect width="400" height="600" fill="url(#bg)"/>
+    <rect width="400" height="600" fill="url(#glow)"/>
+    <g opacity="0.16" stroke="#ffffff" fill="none">
+  <circle cx="331" cy="478" r="130" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="229" cy="467" r="56" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="269" cy="409" r="138" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="98" y1="434" x2="338" y2="0" stroke="#ffffff" stroke-width="1"/>
+    </g>
+    <text x="368" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#E50914" text-anchor="end">N</text>
+    <rect width="400" height="600" fill="url(#vignette)"/>
+    <rect width="400" height="600" fill="url(#fade)"/>
+  <circle cx="97" cy="320" r="1.40" fill="#ffffff" opacity="0.25"/>
+  <circle cx="121" cy="363" r="1.13" fill="#ffffff" opacity="0.25"/>
+  <circle cx="190" cy="71" r="1.43" fill="#ffffff" opacity="0.25"/>
+  <circle cx="359" cy="63" r="1.24" fill="#ffffff" opacity="0.25"/>
+  <circle cx="285" cy="329" r="1.88" fill="#ffffff" opacity="0.25"/>
+  <circle cx="93" cy="359" r="1.11" fill="#ffffff" opacity="0.25"/>
+  <circle cx="343" cy="230" r="1.45" fill="#ffffff" opacity="0.25"/>
+  <circle cx="245" cy="289" r="1.26" fill="#ffffff" opacity="0.25"/>
+  <circle cx="59" cy="470" r="1.71" fill="#ffffff" opacity="0.25"/>
+  <circle cx="201" cy="83" r="1.36" fill="#ffffff" opacity="0.25"/>
+  <circle cx="121" cy="399" r="1.04" fill="#ffffff" opacity="0.25"/>
+  <circle cx="110" cy="320" r="1.86" fill="#ffffff" opacity="0.25"/>
+  <circle cx="385" cy="47" r="1.08" fill="#ffffff" opacity="0.25"/>
+  <circle cx="351" cy="212" r="1.27" fill="#ffffff" opacity="0.25"/>
+  <circle cx="12" cy="14" r="1.82" fill="#ffffff" opacity="0.25"/>
+  <circle cx="49" cy="107" r="1.15" fill="#ffffff" opacity="0.25"/>
+  <circle cx="325" cy="575" r="1.15" fill="#ffffff" opacity="0.25"/>
+  <circle cx="384" cy="590" r="1.43" fill="#ffffff" opacity="0.25"/>
+  <circle cx="362" cy="276" r="1.77" fill="#ffffff" opacity="0.25"/>
+  <circle cx="137" cy="513" r="1.75" fill="#ffffff" opacity="0.25"/>
+  <circle cx="377" cy="80" r="1.53" fill="#ffffff" opacity="0.25"/>
+  <circle cx="139" cy="196" r="1.53" fill="#ffffff" opacity="0.25"/>
+  <circle cx="57" cy="66" r="1.36" fill="#ffffff" opacity="0.25"/>
+  <circle cx="304" cy="84" r="1.69" fill="#ffffff" opacity="0.25"/>
+  <circle cx="174" cy="454" r="1.48" fill="#ffffff" opacity="0.25"/>
+    <rect x="26" y="510" width="36" height="4" fill="#E50914"/>
+  <text x="26" y="502" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.5" fill="rgba(255,255,255,0.75)">ACTION</text>
+  <text x="29" y="559" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="rgba(0,0,0,0.55)">The Witcher</text>
+  <text x="26" y="556" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#ffffff">The Witcher</text>
+  </g>
+</svg>

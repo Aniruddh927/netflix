@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Get Out backdrop">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a1a1a"/><stop offset="0.5" stop-color="#4a1d1d"/><stop offset="1" stop-color="#7a1f1f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.72" cy="0.18" r="0.85">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/>
+    </radialGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.45" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.05 0"/>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g filter="url(#grain)">
+    <rect width="800" height="450" fill="url(#bg)"/>
+    <rect width="800" height="450" fill="url(#glow)"/>
+    <g opacity="0.16" stroke="#ffffff" fill="none">
+  <circle cx="170" cy="31" r="55" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="518" cy="235" r="67" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="475" cy="42" r="144" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="49" y1="359" x2="529" y2="0" stroke="#ffffff" stroke-width="1"/>
+    </g>
+    <text x="752" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#E50914" text-anchor="end">N</text>
+    <rect width="800" height="450" fill="url(#vignette)"/>
+    <rect width="800" height="450" fill="url(#fade)"/>
+  <circle cx="278" cy="144" r="1.21" fill="#ffffff" opacity="0.25"/>
+  <circle cx="672" cy="425" r="1.08" fill="#ffffff" opacity="0.25"/>
+  <circle cx="205" cy="144" r="1.16" fill="#ffffff" opacity="0.25"/>
+  <circle cx="172" cy="338" r="1.07" fill="#ffffff" opacity="0.25"/>
+  <circle cx="713" cy="366" r="1.13" fill="#ffffff" opacity="0.25"/>
+  <circle cx="793" cy="300" r="1.76" fill="#ffffff" opacity="0.25"/>
+  <circle cx="558" cy="47" r="1.89" fill="#ffffff" opacity="0.25"/>
+  <circle cx="753" cy="374" r="1.86" fill="#ffffff" opacity="0.25"/>
+  <circle cx="513" cy="128" r="1.19" fill="#ffffff" opacity="0.25"/>
+  <circle cx="252" cy="112" r="1.61" fill="#ffffff" opacity="0.25"/>
+  <circle cx="140" cy="288" r="1.52" fill="#ffffff" opacity="0.25"/>
+  <circle cx="93" cy="70" r="1.09" fill="#ffffff" opacity="0.25"/>
+  <circle cx="537" cy="25" r="1.24" fill="#ffffff" opacity="0.25"/>
+  <circle cx="19" cy="112" r="1.17" fill="#ffffff" opacity="0.25"/>
+  <circle cx="589" cy="205" r="1.47" fill="#ffffff" opacity="0.25"/>
+  <circle cx="44" cy="75" r="1.18" fill="#ffffff" opacity="0.25"/>
+  <circle cx="700" cy="263" r="1.05" fill="#ffffff" opacity="0.25"/>
+  <circle cx="354" cy="150" r="1.14" fill="#ffffff" opacity="0.25"/>
+  <circle cx="442" cy="209" r="1.83" fill="#ffffff" opacity="0.25"/>
+  <circle cx="563" cy="78" r="1.27" fill="#ffffff" opacity="0.25"/>
+  <circle cx="533" cy="264" r="1.90" fill="#ffffff" opacity="0.25"/>
+  <circle cx="152" cy="403" r="1.05" fill="#ffffff" opacity="0.25"/>
+  <circle cx="682" cy="224" r="1.01" fill="#ffffff" opacity="0.25"/>
+  <circle cx="404" cy="15" r="1.92" fill="#ffffff" opacity="0.25"/>
+  <circle cx="426" cy="352" r="1.50" fill="#ffffff" opacity="0.25"/>
+    <rect x="48" y="316" width="44" height="5" fill="#E50914"/>
+  <text x="48" y="306" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.5" fill="rgba(255,255,255,0.75)">HORROR</text>
+  <text x="51" y="391" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="rgba(0,0,0,0.55)">Get Out</text>
+  <text x="48" y="388" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700" fill="#ffffff">Get Out</text>
+  </g>
+</svg>
