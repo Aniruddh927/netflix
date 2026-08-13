@@ -67,10 +67,26 @@
       return;
     }
 
-    if (!window.google || !google.accounts) {
-      showDisabledNote('Google Sign-In script failed to load — use the email form above.');
-      return;
+    // GIS loads async; poll briefly instead of failing on a load race.
+    function tryRender(attempt) {
+      if (window.google && google.accounts) {
+        google.accounts.id.initialize({ client_id: clientId, callback: onCredential });
+        google.accounts.id.renderButton(googleSlot, {
+          theme: 'filled_blue',
+          size: 'large',
+          text: 'signin_with',
+          shape: 'rectangular',
+          width: 300
+        });
+        return;
+      }
+      if (attempt < 25) {
+        setTimeout(() => tryRender(attempt + 1), 200);
+      } else {
+        showDisabledNote('Google Sign-In script failed to load — use the email form above.');
+      }
     }
+    tryRender(0);
 
     function onCredential(resp) {
       try {
@@ -89,14 +105,7 @@
       }
     }
 
-    google.accounts.id.initialize({ client_id: clientId, callback: onCredential });
-    google.accounts.id.renderButton(googleSlot, {
-      theme: 'filled_blue',
-      size: 'large',
-      text: 'signin_with',
-      shape: 'rectangular',
-      width: 300
-    });
+    // (Button rendering happens in tryRender above, once GIS is ready.)
   });
 
   /** Decode the JWT payload Google returns (no verification — demo only). */

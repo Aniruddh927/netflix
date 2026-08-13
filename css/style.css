@@ -146,14 +146,15 @@ body.scrolled #navbar::before {
 }
 
 .navbar__logo {
-  font-size: 1.6rem;
-  font-weight: 700;
+  font-size: 1.9rem;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: var(--red);
   cursor: pointer;
   line-height: 1;
   user-select: none;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
 .navbar__links {
